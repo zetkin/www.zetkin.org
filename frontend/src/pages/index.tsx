@@ -1,6 +1,6 @@
-import { Typography } from '@mui/material'
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import { Typography } from "@mui/material";
+import type { NextPage } from "next";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         </Typography>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
