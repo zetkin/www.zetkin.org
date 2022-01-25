@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -10,9 +11,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
+        <Typography variant="h1">
           This will be the new website of Zetkin Foundation.
-        </h1>
+        </Typography>
       </main>
     </div>
   )
