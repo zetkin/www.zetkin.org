@@ -1,9 +1,28 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import NextLink from "next/link";
 
-const Home: NextPage = () => {
+import { Page } from "../types/cms";
+import cmsFetch from "../utils/cmsFetch";
+
+interface HomeProps {
+  pages: Page[];
+}
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  const res = await cmsFetch("/pages");
+  const data = await res.json();
+
+  return {
+    props: {
+      pages: data.data,
+    },
+  };
+};
+
+const Home: NextPage<HomeProps> = ({ pages }) => {
   return (
     <div>
       <Head>
@@ -12,6 +31,29 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <Box
+          sx={{
+            backgroundColor: "secondary.main",
+            display: {
+              sm: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-around",
+            padding: 2,
+            "& a:hover": {
+              cursor: 'pointer',
+              fontWeight: "bold",
+            },
+          }}
+        >
+          {pages.map((page) => (
+            <Box key={page.id}>
+              <NextLink href={`/${page.id}`}>
+                <Link>Click here for {page.attributes.title}</Link>
+              </NextLink>
+            </Box>
+          ))}
+        </Box>
         <Box
           sx={{
             color: "primary.main",
