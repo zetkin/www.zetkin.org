@@ -26,7 +26,8 @@ docker-compose up
 
 ### Run services (without Docker)
 You may need Node v14a (as recommended by Strapi) and yarn classic (<2.0.0) for
-services to run smoothly directly on your machine.
+services to run smoothly on your machine. If you have problems, we recommend
+trying Docker.
 
 Run the Strapi CMS like this:
 
