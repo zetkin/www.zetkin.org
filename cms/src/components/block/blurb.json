@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_block_blurbs",
+  "info": {
+    "displayName": "Blurb",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "clock",
+        "coin",
+        "info"
+      ],
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.link"
+    }
+  }
+}

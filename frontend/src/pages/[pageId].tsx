@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps<
   PageProps,
   PageParams
 > = async (ctx) => {
-  const res = await cmsFetch("/pages/" + ctx.params!.pageId);
+  const res = await cmsFetch("/pages/" + ctx.params!.pageId + '?populate=blocks');
   const data = await res.json();
 
   return {

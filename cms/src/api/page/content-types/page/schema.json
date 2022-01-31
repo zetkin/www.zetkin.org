@@ -15,8 +15,13 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "block.quote",
+        "block.blurb-triplet",
+        "block.blurb"
+      ]
     }
   }
 }

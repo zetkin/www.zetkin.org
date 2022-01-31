@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_block_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "quote-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "citation": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.link"
+    }
+  }
+}
