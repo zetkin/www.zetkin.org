@@ -8,6 +8,8 @@ services:
       - "./cms/src:/var/app/src"
   frontend:
     build: ./frontend
+    environment:
+      CMS_HOST: "cms:1337"
     ports:
       - "3000:3000"
     volumes:
