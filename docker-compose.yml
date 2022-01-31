@@ -1,0 +1,16 @@
+version: "3"
+services:
+  cms:
+    build: ./cms
+    ports:
+      - "1337:1337"
+    volumes:
+      - "./cms/src:/var/app/src"
+  frontend:
+    build: ./frontend
+    environment:
+      CMS_HOST: "cms:1337"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./frontend/src:/var/app/src"
