@@ -3,8 +3,9 @@ import { Box } from "@mui/system";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 
-import { Page } from "../types/cms";
+import BlockManager from "../components/BlockManager";
 import cmsFetch from "../utils/cmsFetch";
+import { Page } from "../types/cms";
 
 interface PageProps {
   page: Page;
@@ -30,6 +31,8 @@ export const getServerSideProps: GetServerSideProps<
 };
 
 const PageComponent: NextPage<PageProps> = ({ page }) => {
+  const { attributes } = page;
+
   return (
     <div>
       <Head>
@@ -43,11 +46,12 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
             color: "primary.main",
           }}
         >
-          <Typography variant="h2">{page.attributes.title}</Typography>
+          <Typography variant="h2">{ attributes.title }</Typography>
         </Box>
         <Box>
-          <Typography variant="body1">{page.attributes.content}</Typography>
+          <Typography variant="body1">{ attributes.content }</Typography>
         </Box>
+        <BlockManager blocks={attributes.blocks} />
       </main>
     </div>
   );
