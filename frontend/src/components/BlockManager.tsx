@@ -1,15 +1,15 @@
 import QuoteHero from "./QuoteHero";
 import { Block } from "../types/cms";
 
-const getBlockComponent = ({ __component, ...rest }: { __component: string }) => {
+const getBlockComponent = ({ __component, ...rest }: { __component: string }, index: number) => {
   switch (__component) {
     case 'block.quote':
-      return <QuoteHero {...rest}/>;
+      return <QuoteHero key={`${__component}-${index}`} {...rest}/>;
   }
 };
 
 const BlockManager = ({ blocks }: { blocks: Block[] }) => {
-  return <div>{blocks.map(block => getBlockComponent(block))}</div>
+  return <div>{blocks.map((block, index) => getBlockComponent(block, index))}</div>
 };
 
 BlockManager.defaultProps = {
