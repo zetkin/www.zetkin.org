@@ -4,11 +4,11 @@ import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
 
-import { Page } from "../types/cms";
+import { CmsPage } from "../types/cms";
 import cmsFetch from "../utils/cmsFetch";
 
 interface HomeProps {
-  pages: Page[];
+  pages: CmsPage[];
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {

@@ -5,10 +5,10 @@ import Head from "next/head";
 
 import BlockManager from "../components/BlockManager";
 import cmsFetch from "../utils/cmsFetch";
-import { Page } from "../types/cms";
+import { CmsPage } from "../types/cms";
 
 interface PageProps {
-  page: Page;
+  page: CmsPage;
 }
 
 interface PageParams {

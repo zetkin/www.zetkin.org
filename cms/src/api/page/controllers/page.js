@@ -15,6 +15,15 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
       populate: {
         blocks: {
           populate: {
+            blurbs: {
+              populate: {
+                links: {
+                  populate: {
+                      page: true,
+                    }
+                  },
+                }
+              },
             background: true,
             image: true,
             links: {

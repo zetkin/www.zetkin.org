@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import getCmsMedia from "../utils/getCmsMedia";
-import QuoteLinkArea from "./QuoteLinkArea";
+import LinkArea from "./LinkArea";
 
 const QuoteHero = ({ ...rest }) => {
   const { quote, citation, image, background, links } = rest;
@@ -38,7 +38,7 @@ const QuoteHero = ({ ...rest }) => {
         <Typography variant="h2">{quote}</Typography>
         <Typography variant="h5">{citation}</Typography>
         <CardActions>
-          <QuoteLinkArea { ...links }/>
+          <LinkArea { ...links }/>
         </CardActions>
       </Box>
     </Card>

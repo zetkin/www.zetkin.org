@@ -1,25 +1,14 @@
 import NextLink from "next/link";
 import { Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+
 import makePageUrl from "../utils/makePageUrl";
+import { CmsLink } from "../types/cms";
 
-interface Link {
-  id: number,
-  label: string,
-  externalUrl?: string,
-  page?: Page,
-}
-
-interface Page {
-  data: {
-    id: number,
-  }
-}
-
-const QuoteLinkArea = ({ ...links }) => {
+const LinkArea = ({ ...links }) => {
   return (
     <Box>
-      {Object.values(links).map((link: Link, index: number) => {
+      {Object.values(links).map((link: CmsLink, index: number) => {
         const href = link.externalUrl ? link.externalUrl : makePageUrl(link.page!.data.id);
 
         return (
@@ -36,4 +25,4 @@ const QuoteLinkArea = ({ ...links }) => {
   );
 };
 
-export default QuoteLinkArea;
+export default LinkArea;
