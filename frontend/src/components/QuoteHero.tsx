@@ -1,6 +1,6 @@
-import { Typography, Card, CardMedia, CardActions, Link } from "@mui/material";
+import { Typography, Card, CardMedia, CardActions } from "@mui/material";
 import { Box } from "@mui/system";
-import Image from "next/image";
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import getCmsMedia from "../utils/getCmsMedia";
 import QuoteLinkArea from "./QuoteLinkArea";
@@ -13,23 +13,36 @@ const QuoteHero = ({ ...rest }) => {
 
   return (
     <Card sx={{
-      backgroundImage: `url(${backgroundUrl})`,
+      background: `url(${backgroundUrl}) rgba(0, 0, 0, 0.4)`,
+      backgroundBlendMode: "multiply",
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
       display: "flex",
     }}>
-      <CardMedia>
-        <Image alt="tom tom tom" src={imageUrl} width={400} height={500}/>
-      </CardMedia>
-      <Box>
+        <CardMedia
+          component="img"
+          alt={image.data.attributes.alternativeText}
+          image={imageUrl}
+          sx={{
+            border: 4,
+            borderColor: "white",
+            borderRadius: "50%",
+            width: 300,
+            height: 300,
+          }}/>
+      <Box sx={{ color: "white" }}>
+        <FormatQuoteIcon
+          fontSize="large"
+          sx={{ color: "primary.main" }}
+        />
         <Typography variant="h2">{quote}</Typography>
-        <Typography variant="h4">{citation}</Typography>
+        <Typography variant="h5">{citation}</Typography>
         <CardActions>
           <QuoteLinkArea { ...links }/>
         </CardActions>
       </Box>
     </Card>
   );
-};
+}
 
 export default QuoteHero;
