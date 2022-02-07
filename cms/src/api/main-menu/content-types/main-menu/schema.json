@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_menus",
+  "info": {
+    "singularName": "main-menu",
+    "pluralName": "main-menus",
+    "displayName": "MainMenu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TabName": {
+      "type": "string"
+    },
+    "Section1": {
+      "type": "dynamiczone",
+      "components": [
+        "block.menu-item"
+      ]
+    },
+    "Section2": {
+      "type": "dynamiczone",
+      "components": [
+        "block.menu-item"
+      ]
+    },
+    "Section3": {
+      "type": "dynamiczone",
+      "components": [
+        "block.menu-item"
+      ]
+    }
+  }
+}

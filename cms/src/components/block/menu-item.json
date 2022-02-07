@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_block_menu_items",
+  "info": {
+    "displayName": "MenuItem",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.link"
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "misc.link"
+    }
+  }
+}
