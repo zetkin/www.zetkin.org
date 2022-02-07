@@ -34,3 +34,24 @@ export type CmsBlurb = {
   icon: string,
   links: CmsLink[],
 }
+
+export type CmsTimelineNode = {
+  id: number,
+  title: string,
+  content?: string,
+  image?: CmsImage,
+}
+
+interface CmsImage {
+  data: CmsImageData,
+}
+
+interface CmsImageData {
+  id: number,
+  attributes: CmsImageDataAttributes,
+}
+
+interface CmsImageDataAttributes {
+  alternativeText: string,
+  url: string,
+}

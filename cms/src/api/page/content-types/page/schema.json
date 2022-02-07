@@ -29,7 +29,8 @@
       "components": [
         "block.quote",
         "block.blurb-triplet",
-        "block.blurb"
+        "block.blurb",
+        "block.timeline"
       ],
       "pluginOptions": {
         "i18n": {

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_timelines",
+  "info": {
+    "displayName": "Timeline",
+    "icon": "grip-lines-vertical",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "timelineNode": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block.timeline-node",
+      "required": false
+    }
+  }
+}
