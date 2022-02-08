@@ -9,7 +9,7 @@
   "attributes": {
     "label": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "externalUrl": {
       "type": "string"
