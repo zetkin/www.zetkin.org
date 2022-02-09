@@ -26,6 +26,36 @@ module.exports = createCoreController('api::main-menu.main-menu', ({ strapi }) =
             },
           }
         },
+        section2: {
+          populate: {
+            cta: {
+              populate: {
+                page: true,
+              }
+            },
+            image: true,
+            links: {
+              populate: {
+                page: true,
+              }
+            },
+          }
+        },
+        section3: {
+          populate: {
+            cta: {
+              populate: {
+                page: true,
+              }
+            },
+            image: true,
+            links: {
+              populate: {
+                page: true,
+              }
+            },
+          }
+        },
       },
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);

@@ -3,26 +3,32 @@ import { Box } from "@mui/system";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
+import MainMenuTab from "../components/MainMenu/MainMenuTab";
 
-import { CmsPage } from "../types/cms";
+import { CmsMainMenuTab, CmsPage } from "../types/cms";
 import cmsFetch from "../utils/cmsFetch";
 
 interface HomeProps {
   pages: CmsPage[];
+  mainMenu: CmsMainMenuTab[];
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const res = await cmsFetch("/pages");
   const data = await res.json();
 
+  const mainMenuRes = await cmsFetch("/main-menus");
+  const mainMenuData = await mainMenuRes.json();
+
   return {
     props: {
       pages: data.data,
+      mainMenu: mainMenuData.data,
     },
   };
 };
 
-const Home: NextPage<HomeProps> = ({ pages }) => {
+const Home: NextPage<HomeProps> = ({ pages, mainMenu }) => {
   return (
     <div>
       <Head>
@@ -31,6 +37,12 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
       </Head>
 
       <main>
+        <Box sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}>
+          {mainMenu.map((menuTab, index) => <MainMenuTab key={`menuTab-${index}`} {...menuTab} />)}
+        </Box>
         <Box
           sx={{
             backgroundColor: "secondary.main",
