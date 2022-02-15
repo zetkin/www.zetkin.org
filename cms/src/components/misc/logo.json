@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_misc_logos",
+  "info": {
+    "displayName": "Logo",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "organisation": {
+      "type": "string"
+    }
+  }
+}

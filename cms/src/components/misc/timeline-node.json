@@ -2,7 +2,8 @@
   "collectionName": "components_block_timeline_nodes",
   "info": {
     "displayName": "TimelineNode",
-    "icon": "dot-circle"
+    "icon": "dot-circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,11 +16,12 @@
       "required": false
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_block_faq_accordions",
+  "info": {
+    "displayName": "FaqAccordion",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.faq"
+    }
+  }
+}

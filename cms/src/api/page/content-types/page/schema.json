@@ -30,7 +30,9 @@
         "block.quote",
         "block.blurb-triplet",
         "block.blurb",
-        "block.timeline"
+        "block.timeline",
+        "block.faq-accordion",
+        "block.logo-wall"
       ],
       "pluginOptions": {
         "i18n": {

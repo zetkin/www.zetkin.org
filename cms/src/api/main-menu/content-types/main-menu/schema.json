@@ -18,19 +18,19 @@
     "section1": {
       "type": "dynamiczone",
       "components": [
-        "block.menu-item"
+        "misc.menu-item"
       ]
     },
     "section2": {
       "type": "dynamiczone",
       "components": [
-        "block.menu-item"
+        "misc.menu-item"
       ]
     },
     "section3": {
       "type": "dynamiczone",
       "components": [
-        "block.menu-item"
+        "misc.menu-item"
       ]
     }
   }

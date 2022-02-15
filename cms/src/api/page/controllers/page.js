@@ -7,6 +7,26 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::page.page', ({ strapi }) => ({
+  async find(ctx) {
+    const entity = await strapi.entityService.findMany('api::page.page', {
+      fields: ['*'],
+      populate: {
+        children: {
+          populate: {
+            data: true,
+          },
+        },
+        parent: {
+          populate: {
+            data: true,
+          },
+        },
+      }
+    });
+    const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+
+    return this.transformResponse(sanitizedEntity);
+  },
   async findOne(ctx) {
     const pageId = parseInt(ctx.request.params.id);
 
@@ -43,7 +63,6 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 
     return this.transformResponse(sanitizedEntity);
-
   }
 }));
 

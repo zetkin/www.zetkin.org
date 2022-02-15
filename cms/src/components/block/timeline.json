@@ -10,7 +10,7 @@
     "timelineNode": {
       "type": "component",
       "repeatable": true,
-      "component": "block.timeline-node",
+      "component": "misc.timeline-node",
       "required": false
     }
   }

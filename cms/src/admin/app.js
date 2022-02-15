@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   config: {
     locales: [
@@ -29,7 +31,5 @@ export default {
       // 'zh',
     ],
   },
-  bootstrap(app) {
-    console.log(app);
-  },
+  bootstrap(app) {},
 };

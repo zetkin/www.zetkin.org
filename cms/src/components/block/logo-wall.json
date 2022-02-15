@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_logo_walls",
+  "info": {
+    "displayName": "LogoWall",
+    "icon": "dice-d20"
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.logo"
+    }
+  }
+}

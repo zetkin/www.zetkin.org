@@ -1,0 +1,26 @@
+{
+  "name": "ziggi",
+  "version": "0.0.0",
+  "description": "Ziggis super cool plugin.",
+  "strapi": {
+    "name": "ziggi",
+    "description": "The Ziggi plugin makes everything better",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^0.0.1-alpha.75"
+  },
+  "author": {
+    "name": "Ziggi"
+  },
+  "maintainers": [
+    {
+      "name": "Ziggi"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x. <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
