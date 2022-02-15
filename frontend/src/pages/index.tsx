@@ -41,7 +41,7 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
             justifyContent: "space-around",
             padding: 2,
             "& a:hover": {
-              cursor: 'pointer',
+              cursor: "pointer",
               fontWeight: "bold",
             },
           }}
