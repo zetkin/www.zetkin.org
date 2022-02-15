@@ -1,18 +1,18 @@
-import { Link, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import type { GetServerSideProps, NextPage } from "next";
-import Head from "next/head";
-import NextLink from "next/link";
+import { Link, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import type { GetServerSideProps, NextPage } from 'next';
+import Head from 'next/head';
+import NextLink from 'next/link';
 
-import { Page } from "../types/cms";
-import cmsFetch from "../utils/cmsFetch";
+import { Page } from '../types/cms';
+import cmsFetch from '../utils/cmsFetch';
 
 interface HomeProps {
   pages: Page[];
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const res = await cmsFetch("/pages");
+  const res = await cmsFetch('/pages');
   const data = await res.json();
 
   return {
@@ -33,16 +33,16 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
       <main>
         <Box
           sx={{
-            backgroundColor: "secondary.main",
+            backgroundColor: 'secondary.main',
             display: {
-              sm: "flex",
-              xs: "block",
+              sm: 'flex',
+              xs: 'block',
             },
-            justifyContent: "space-around",
+            justifyContent: 'space-around',
             padding: 2,
-            "& a:hover": {
-              cursor: "pointer",
-              fontWeight: "bold",
+            '& a:hover': {
+              cursor: 'pointer',
+              fontWeight: 'bold',
             },
           }}
         >
@@ -56,7 +56,7 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
         </Box>
         <Box
           sx={{
-            color: "primary.main",
+            color: 'primary.main',
           }}
         >
           <Typography variant="h1">
