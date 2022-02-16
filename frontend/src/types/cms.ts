@@ -2,7 +2,7 @@ interface CmsDoc<Attributes> {
   id: number;
   attributes: Attributes;
   data: {
-    id: number,
+    id: number;
   };
 }
 
@@ -19,6 +19,6 @@ export type CmsLink = {
 };
 
 interface CmsBlock {
-  id: number,
-  __component: string,
-};
+  id: number;
+  __component: string;
+}

@@ -17,9 +17,7 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": [
-        "blocks.quote"
-      ]
+      "components": ["blocks.quote"]
     }
   }
 }

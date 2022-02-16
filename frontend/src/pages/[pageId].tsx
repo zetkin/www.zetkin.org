@@ -1,11 +1,11 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import type { GetServerSideProps, NextPage } from "next";
-import Head from "next/head";
+import { Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import type { GetServerSideProps, NextPage } from 'next';
+import Head from 'next/head';
 
-import QuoteHero from "../components/QuoteHero";
-import { CmsPage } from "../types/cms";
-import cmsFetch from "../utils/cmsFetch";
+import QuoteHero from '../components/QuoteHero';
+import { CmsPage } from '../types/cms';
+import cmsFetch from '../utils/cmsFetch';
 
 interface PageProps {
   page: CmsPage;
@@ -31,7 +31,10 @@ export const getServerSideProps: GetServerSideProps<
 };
 
 const PageComponent: NextPage<PageProps> = ({ page }) => {
-  const getBlockComponent = ({ __component, ...rest }: { __component: string }, index: number) => {
+  const getBlockComponent = (
+    { __component, ...rest }: { __component: string },
+    index: number
+  ) => {
     console.log(__component);
     switch (__component) {
       case 'blocks.quote':
@@ -55,9 +58,9 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           <Typography variant="h2">{page.attributes.title}</Typography>
         </Box>
         <Box>
-          {
-            page.attributes.blocks.map((block, index) => getBlockComponent(block, index))
-          }
+          {page.attributes.blocks.map((block, index) =>
+            getBlockComponent(block, index)
+          )}
         </Box>
       </main>
     </div>

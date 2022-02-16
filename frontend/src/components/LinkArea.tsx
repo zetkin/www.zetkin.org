@@ -10,17 +10,17 @@ const LinkArea = ({ ...links }) => {
     <Box>
       {Object.values(links).map((link: CmsLink, index: number) => {
         //jag låtsas att vi kan kontrollera i strapi att man ALLTID fyller i ena lr andra
-        const href = link.externalUrl ? link.externalUrl : makePageUrl(link.page!.data.id);
+        const href = link.externalUrl
+          ? link.externalUrl
+          : makePageUrl(link.page!.data.id);
 
         return (
           <NextLink key={`link-${index}`} href={href} passHref>
             <Link>
-              <Typography>
-                {link.label}
-              </Typography>
+              <Typography>{link.label}</Typography>
             </Link>
-        </NextLink>
-        )
+          </NextLink>
+        );
       })}
     </Box>
   );

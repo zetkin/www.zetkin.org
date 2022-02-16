@@ -25,9 +25,9 @@ const QuoteHero = ({ ...data }) => {
         src={imageUrl}
         width={200}
       />
-      <Typography>{ quote }</Typography>
-      <Typography>{ citation }</Typography>
-      <LinkArea { ...links }/>
+      <Typography>{quote}</Typography>
+      <Typography>{citation}</Typography>
+      <LinkArea {...links} />
     </Box>
   );
 };
