@@ -2,12 +2,13 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import QuoteHero from "../components/QuoteHero";
 
-import { Page } from "../types/cms";
+import { CmsPage } from "../types/cms";
 import cmsFetch from "../utils/cmsFetch";
 
 interface PageProps {
-  page: Page;
+  page: CmsPage;
 }
 
 interface PageParams {
@@ -30,6 +31,14 @@ export const getServerSideProps: GetServerSideProps<
 };
 
 const PageComponent: NextPage<PageProps> = ({ page }) => {
+  const getBlockComponent = ({ __component, ...rest }: { __component: string }, index: number) => {
+    console.log(__component);
+    switch (__component) {
+      case 'blocks.quote':
+        return <QuoteHero key={`${__component}-${index}`} {...rest} />;
+    }
+  };
+
   return (
     <div>
       <Head>
@@ -46,7 +55,9 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           <Typography variant="h2">{page.attributes.title}</Typography>
         </Box>
         <Box>
-          <Typography variant="body1">{page.attributes.content}</Typography>
+          {
+            page.attributes.blocks.map((block, index) => getBlockComponent(block, index))
+          }
         </Box>
       </main>
     </div>
