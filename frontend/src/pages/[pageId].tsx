@@ -2,8 +2,8 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import QuoteHero from "../components/QuoteHero";
 
+import QuoteHero from "../components/QuoteHero";
 import { CmsPage } from "../types/cms";
 import cmsFetch from "../utils/cmsFetch";
 
@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps<
   PageProps,
   PageParams
 > = async (ctx) => {
-  const res = await cmsFetch("/pages/" + ctx.params!.pageId);
+  const res = await cmsFetch('/pages/' + ctx.params!.pageId);
   const data = await res.json();
 
   return {
@@ -49,7 +49,7 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
       <main>
         <Box
           sx={{
-            color: "primary.main",
+            color: 'primary.main',
           }}
         >
           <Typography variant="h2">{page.attributes.title}</Typography>

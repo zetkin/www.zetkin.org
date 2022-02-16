@@ -4,9 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "format": "prettier --write src",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && prettier --check .",
+    "format": "prettier --write src"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
@@ -25,6 +25,7 @@
     "@types/react": "17.0.38",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.5.1",
     "typescript": "4.5.5"
   }
