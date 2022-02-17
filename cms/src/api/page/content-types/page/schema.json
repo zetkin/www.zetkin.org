@@ -21,7 +21,8 @@
       "components": [
         "blocks.quote",
         "blocks.timeline",
-        "blocks.faq-accordion"
+        "blocks.faq-accordion",
+        "blocks.logo-wall"
       ]
     }
   }

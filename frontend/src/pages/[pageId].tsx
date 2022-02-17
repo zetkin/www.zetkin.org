@@ -8,6 +8,7 @@ import Timeline from '../components/Timeline';
 import QuoteHero from '../components/QuoteHero';
 import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
+import LogoWall from '../components/LogoWall';
 
 interface PageProps {
   page: CmsPage;
@@ -44,6 +45,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <Timeline key={`${__component}-${index}`} {...rest} />;
       case 'blocks.faq-accordion':
         return <FaqAccordion key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.logo-wall':
+        return <LogoWall key={`${__component}-${index}`} {...rest} />
     }
   };
 

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_logo_walls",
+  "info": {
+    "displayName": "LogoWall",
+    "icon": "cubes"
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sub-components.logo",
+      "required": true
+    }
+  }
+}

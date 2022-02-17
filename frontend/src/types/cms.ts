@@ -37,10 +37,24 @@ interface CmsImage {
 type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
+  formats: CmsImageFormats;
 }>;
 
 export type CmsAccordionItem = {
   id: number;
   title: string;
   content: string;
+};
+
+export type CmsLogo = {
+  id: number;
+  image: CmsImage;
+};
+
+interface CmsImageFormats {
+  thumbnail: CmsImageThumbnail;
+};
+
+interface CmsImageThumbnail {
+  url: string;
 };
