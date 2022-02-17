@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sub_components_timeline_nodes",
+  "info": {
+    "displayName": "TimelineNode",
+    "icon": "dot-circle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sub_components_accordion_items",
+  "info": {
+    "displayName": "AccordionItem",
+    "icon": "grip-lines"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

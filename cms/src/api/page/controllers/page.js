@@ -18,6 +18,7 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
         populate: {
           blocks: {
             populate: {
+              accordionItems: true,
               background: true,
               image: true,
               links: {
@@ -25,6 +26,11 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
                   page: true,
                 },
               },
+              nodes: {
+                populate: {
+                  image: true,
+                }
+              }
             },
           },
         },
@@ -33,5 +39,5 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 
     return this.transformResponse(sanitizedEntity);
-  },
+  }
 }));

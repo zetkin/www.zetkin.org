@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_timelines",
+  "info": {
+    "displayName": "Timeline",
+    "icon": "arrow-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "nodes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sub-components.timeline-node"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

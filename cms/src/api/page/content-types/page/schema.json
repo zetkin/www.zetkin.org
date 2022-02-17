@@ -13,11 +13,16 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["blocks.quote"]
+      "components": [
+        "blocks.quote",
+        "blocks.timeline",
+        "blocks.faq-accordion"
+      ]
     }
   }
 }
