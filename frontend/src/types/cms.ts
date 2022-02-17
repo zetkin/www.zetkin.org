@@ -48,7 +48,9 @@ export type CmsAccordionItem = {
 
 export type CmsLogo = {
   id: number;
+  externalUrl?: string
   image: CmsImage;
+  page?: CmsPage;
 };
 
 interface CmsImageFormats {
