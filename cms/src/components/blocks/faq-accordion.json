@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_faq_accordions",
+  "info": {
+    "displayName": "FaqAccordion",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "accordionItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sub-components.accordion-item",
+      "required": true
+    }
+  }
+}

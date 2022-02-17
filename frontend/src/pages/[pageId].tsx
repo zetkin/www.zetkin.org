@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 
+import FaqAccordion from '../components/FaqAccordion';
 import Timeline from '../components/Timeline';
 import QuoteHero from '../components/QuoteHero';
 import { CmsPage } from '../types/cms';
@@ -41,6 +42,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <QuoteHero key={`${__component}-${index}`} {...rest} />;
       case 'blocks.timeline':
         return <Timeline key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.faq-accordion':
+        return <FaqAccordion key={`${__component}-${index}`} {...rest} />;
     }
   };
 

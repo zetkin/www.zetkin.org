@@ -38,3 +38,9 @@ type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
 }>;
+
+export type CmsAccordionItem = {
+  id: number;
+  title: string;
+  content: string;
+};
