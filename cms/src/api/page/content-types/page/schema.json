@@ -15,8 +15,9 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
+    "blocks": {
+      "type": "dynamiczone",
+      "components": ["blocks.quote"]
     }
   }
 }
