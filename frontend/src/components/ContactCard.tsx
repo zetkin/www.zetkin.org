@@ -11,7 +11,7 @@ import NextLink from 'next/link';
 import getCmsMedia from '../utils/getCmsMedia';
 
 const ContactCard = ({ ...rest }) => {
-  const { name, title, role, contact, image } = rest;
+  const { name, title, role, image, email, phone } = rest;
 
   return (
     <Card>
@@ -27,17 +27,12 @@ const ContactCard = ({ ...rest }) => {
         {role && <Typography>{role}</Typography>}
       </CardContent>
       <CardActions>
-        {contact.email && (
-          <NextLink href={`mailto:${contact.email}`} passHref>
-            <Link>{contact.email}</Link>
+        {email && (
+          <NextLink href={`mailto:${email}`} passHref>
+            <Link>{email}</Link>
           </NextLink>
         )}
-        {contact.phone && <Typography>{contact.phone}</Typography>}
-        {contact.websiteUrl && (
-          <NextLink href={contact.websiteUrl} passHref>
-            <Link>{contact.websiteName? contact.websiteName : contact.websiteUrl}</Link>
-          </NextLink>
-        )}
+        {phone && <Typography>{phone}</Typography>}
       </CardActions>
     </Card>
   );

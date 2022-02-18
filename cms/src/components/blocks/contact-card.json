@@ -22,13 +22,13 @@
     "title": {
       "type": "string"
     },
-    "contact": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sub-components.contact-section",
-      "required": true
-    },
     "role": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
       "type": "string"
     }
   }
