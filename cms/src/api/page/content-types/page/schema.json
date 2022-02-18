@@ -23,7 +23,8 @@
         "blocks.timeline",
         "blocks.faq-accordion",
         "blocks.logo-wall",
-        "blocks.contact-card"
+        "blocks.contact-card",
+        "blocks.large-list"
       ]
     }
   }

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_sub_components_list_items",
+  "info": {
+    "displayName": "ListItem",
+    "icon": "minus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "linkLabel": {
+      "type": "string"
+    }
+  }
+}

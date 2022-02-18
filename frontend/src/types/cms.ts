@@ -60,3 +60,13 @@ interface CmsImageFormats {
 interface CmsImageThumbnail {
   url: string;
 }
+
+export type CmsListItem = {
+  id: number;
+  title: string;
+  content?: string;
+  image?: CmsImage;
+  externalUrl?: string;
+  page?: CmsPage;
+  linkLabel?: string;
+};

@@ -10,6 +10,7 @@ import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
 import ContactCard from '../components/ContactCard';
+import LargeList from '../components/LargeList';
 
 interface PageProps {
   page: CmsPage;
@@ -50,6 +51,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <LogoWall key={`${__component}-${index}`} {...rest} />;
       case 'blocks.contact-card':
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.large-list':
+        return <LargeList key={`${__component}-${index}`} {...rest} />;
     }
   };
 
