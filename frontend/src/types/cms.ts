@@ -48,15 +48,15 @@ export type CmsAccordionItem = {
 
 export type CmsLogo = {
   id: number;
-  externalUrl?: string
+  externalUrl?: string;
   image: CmsImage;
   page?: CmsPage;
 };
 
 interface CmsImageFormats {
   thumbnail: CmsImageThumbnail;
-};
+}
 
 interface CmsImageThumbnail {
   url: string;
-};
+}
