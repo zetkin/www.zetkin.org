@@ -19,7 +19,7 @@ const LargeList = ({ ...rest }) => {
 
   return (
     <List>
-      {title && <Typography>{title}</Typography>}
+      {title && <Typography variant="h4">{title}</Typography>}
       {listItems.map((item: CmsListItem, index: number) => {
         return (
           <ListItem key={`listItem-${index}`}>
@@ -28,7 +28,7 @@ const LargeList = ({ ...rest }) => {
             </ListItemAvatar>
             <ListItemText
               disableTypography={true}
-              primary={`${item.title}`}
+              primary={<Typography variant="h5">{item.title}</Typography>}
               secondary={
                 <>
                   {item.content && <Typography>{item.content}</Typography>}
