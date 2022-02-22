@@ -8,6 +8,7 @@ interface CmsDoc<Attributes> {
 
 export type CmsPage = CmsDoc<{
   title: string;
+  image: CmsImage;
   blocks: CmsBlock[];
 }>;
 

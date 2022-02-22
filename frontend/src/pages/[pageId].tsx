@@ -9,6 +9,8 @@ import QuoteHero from '../components/QuoteHero';
 import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
+import Image from 'next/image';
+import getCmsMedia from '../utils/getCmsMedia';
 
 interface PageProps {
   page: CmsPage;
@@ -46,7 +48,7 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
       case 'blocks.faq-accordion':
         return <FaqAccordion key={`${__component}-${index}`} {...rest} />;
       case 'blocks.logo-wall':
-        return <LogoWall key={`${__component}-${index}`} {...rest} />
+        return <LogoWall key={`${__component}-${index}`} {...rest} />;
     }
   };
 
@@ -64,6 +66,14 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           }}
         >
           <Typography variant="h2">{page.attributes.title}</Typography>
+          {page.attributes.image && (
+            <Image
+              alt={page.attributes.image.data.attributes.alternativeText}
+              height={200}
+              src={getCmsMedia(page.attributes.image.data.attributes.url)}
+              width={300}
+            />
+          )}
         </Box>
         <Box>
           {page.attributes.blocks.map((block, index) =>

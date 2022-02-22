@@ -39,6 +39,7 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
               }
             },
           },
+          image: true,
         },
       }
     );

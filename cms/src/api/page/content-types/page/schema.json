@@ -24,6 +24,13 @@
         "blocks.faq-accordion",
         "blocks.logo-wall"
       ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
