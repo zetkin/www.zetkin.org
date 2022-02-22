@@ -11,7 +11,7 @@ import NextLink from 'next/link';
 import getCmsMedia from '../utils/getCmsMedia';
 
 const ContactCard = ({ ...rest }) => {
-  const { name, title, role, image, email, phone } = rest;
+  const { name, cardTitle, role, image, email, phone } = rest;
 
   return (
     <Card>
@@ -22,7 +22,7 @@ const ContactCard = ({ ...rest }) => {
         image={getCmsMedia(image.data.attributes.url)}
       />
       <CardContent>
-        {title && <Typography>{title}</Typography>}
+        {cardTitle && <Typography>{cardTitle}</Typography>}
         <Typography>{name}</Typography>
         {role && <Typography>{role}</Typography>}
       </CardContent>
@@ -32,7 +32,11 @@ const ContactCard = ({ ...rest }) => {
             <Link>{email}</Link>
           </NextLink>
         )}
-        {phone && <Typography>{phone}</Typography>}
+        {phone && (
+          <NextLink href={`tel:${phone}`} passHref>
+            <Link>{phone}</Link>
+          </NextLink>
+        )}
       </CardActions>
     </Card>
   );
