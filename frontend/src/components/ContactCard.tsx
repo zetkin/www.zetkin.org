@@ -22,7 +22,7 @@ const ContactCard = ({ ...rest }) => {
         image={getCmsMedia(image.data.attributes.url)}
       />
       <CardContent>
-        {cardTitle && <Typography>{cardTitle}</Typography>}
+        {cardTitle && <Typography variant="h4">{cardTitle}</Typography>}
         <Typography>{name}</Typography>
         {role && <Typography>{role}</Typography>}
       </CardContent>
