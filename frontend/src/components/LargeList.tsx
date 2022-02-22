@@ -24,7 +24,7 @@ const LargeList = ({ ...rest }) => {
         return (
           <ListItem key={`listItem-${index}`}>
             <ListItemAvatar>
-              <Avatar>{item.id}</Avatar>
+              <Avatar>{index + 1}</Avatar>
             </ListItemAvatar>
             <ListItemText
               disableTypography={true}
