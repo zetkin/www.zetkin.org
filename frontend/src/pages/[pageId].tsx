@@ -11,6 +11,7 @@ import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
 import ContactCard from '../components/ContactCard';
 import LargeList from '../components/LargeList';
+import Blurb from '../components/Blurb';
 
 interface PageProps {
   page: CmsPage;
@@ -53,6 +54,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
       case 'blocks.large-list':
         return <LargeList key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.blurb':
+        return <Blurb key={`${__component}-${index}`} {...rest} />;
     }
   };
 
