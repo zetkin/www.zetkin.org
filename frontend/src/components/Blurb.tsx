@@ -34,7 +34,7 @@ const Blurb = ({ ...rest }) => {
     <Card>
       <CardContent>
         {icon && iconSwitch()}
-        <Typography>{title}</Typography>
+        <Typography variant="h5">{title}</Typography>
         {content && <Typography>{content}</Typography>}
       </CardContent>
       {linkLabel && (
