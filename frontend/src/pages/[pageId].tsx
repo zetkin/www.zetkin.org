@@ -11,6 +11,7 @@ import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
 import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
+import ContactCard from '../components/ContactCard';
 
 interface PageProps {
   page: CmsPage;
@@ -49,6 +50,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <FaqAccordion key={`${__component}-${index}`} {...rest} />;
       case 'blocks.logo-wall':
         return <LogoWall key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.contact-card':
+        return <ContactCard key={`${__component}-${index}`} {...rest} />;
     }
   };
 
