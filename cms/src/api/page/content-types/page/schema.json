@@ -25,6 +25,11 @@
         "blocks.logo-wall",
         "blocks.contact-card"
       ]
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
     }
   }
 }
