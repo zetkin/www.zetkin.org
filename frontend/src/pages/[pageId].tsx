@@ -13,6 +13,7 @@ import TextBlock from '../components/TextBlock';
 import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 import ContactCard from '../components/ContactCard';
+import ImageBlock from '../components/ImageBlock';
 
 interface PageProps {
   page: CmsPage;
@@ -55,6 +56,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <LogoWall key={`${__component}-${index}`} {...rest} />;
       case 'blocks.contact-card':
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.image-block':
+        return <ImageBlock key={`${__component}-${index}`} {...rest} />;
     }
   };
 
