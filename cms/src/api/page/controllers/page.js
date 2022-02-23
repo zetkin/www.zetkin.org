@@ -35,8 +35,8 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
               nodes: {
                 populate: {
                   image: true,
-                }
-              }
+                },
+              },
             },
           },
           image: true,
@@ -46,5 +46,5 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 
     return this.transformResponse(sanitizedEntity);
-  }
+  },
 }));

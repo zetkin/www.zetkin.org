@@ -21,9 +21,9 @@ const QuoteHero = ({ ...data }) => {
       />
       <Image
         alt={image.data.attributes.alternativeText}
-        height={150}
+        height={image.data.attributes.height}
         src={imageUrl}
-        width={200}
+        width={image.data.attributes.width}
       />
       <Typography>{quote}</Typography>
       <Typography>{citation}</Typography>

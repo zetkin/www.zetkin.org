@@ -69,9 +69,9 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           {page.attributes.image && (
             <Image
               alt={page.attributes.image.data.attributes.alternativeText}
-              height={200}
+              height={page.attributes.image.data.attributes.height}
               src={getCmsMedia(page.attributes.image.data.attributes.url)}
-              width={300}
+              width={page.attributes.image.data.attributes.width}
             />
           )}
         </Box>

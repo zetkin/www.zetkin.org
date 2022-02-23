@@ -39,6 +39,8 @@ type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
+  height: number;
+  width: number;
 }>;
 
 export type CmsAccordionItem = {
