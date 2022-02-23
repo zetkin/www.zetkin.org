@@ -9,6 +9,7 @@ import QuoteHero from '../components/QuoteHero';
 import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
+import TextBlock from '../components/TextBlock';
 
 interface PageProps {
   page: CmsPage;
@@ -39,6 +40,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
     index: number
   ) => {
     switch (__component) {
+      case 'blocks.text-block':
+        return <TextBlock key={`${__component}-${index}`} {...rest} />;
       case 'blocks.quote':
         return <QuoteHero key={`${__component}-${index}`} {...rest} />;
       case 'blocks.timeline':
@@ -46,7 +49,7 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
       case 'blocks.faq-accordion':
         return <FaqAccordion key={`${__component}-${index}`} {...rest} />;
       case 'blocks.logo-wall':
-        return <LogoWall key={`${__component}-${index}`} {...rest} />
+        return <LogoWall key={`${__component}-${index}`} {...rest} />;
     }
   };
 
