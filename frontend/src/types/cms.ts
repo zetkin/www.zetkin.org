@@ -8,6 +8,7 @@ interface CmsDoc<Attributes> {
 
 export type CmsPage = CmsDoc<{
   title: string;
+  image: CmsImage;
   blocks: CmsBlock[];
 }>;
 
@@ -38,6 +39,8 @@ type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
+  height: number;
+  width: number;
 }>;
 
 export type CmsAccordionItem = {

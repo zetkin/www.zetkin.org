@@ -25,8 +25,14 @@
         "blocks.logo-wall",
         "blocks.contact-card",
         "blocks.large-list",
-        "blocks.blurb"
+        "blocks.blurb",
+        "blocks.text-block"
       ]
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
     }
   }
 }
