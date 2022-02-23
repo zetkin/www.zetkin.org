@@ -9,6 +9,9 @@ import QuoteHero from '../components/QuoteHero';
 import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
+import TextBlock from '../components/TextBlock';
+import Image from 'next/image';
+import getCmsMedia from '../utils/getCmsMedia';
 import ContactCard from '../components/ContactCard';
 import LargeList from '../components/LargeList';
 
@@ -41,6 +44,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
     index: number
   ) => {
     switch (__component) {
+      case 'blocks.text-block':
+        return <TextBlock key={`${__component}-${index}`} {...rest} />;
       case 'blocks.quote':
         return <QuoteHero key={`${__component}-${index}`} {...rest} />;
       case 'blocks.timeline':
@@ -70,6 +75,14 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           }}
         >
           <Typography variant="h2">{page.attributes.title}</Typography>
+          {page.attributes.image && (
+            <Image
+              alt={page.attributes.image.data.attributes.alternativeText}
+              height={page.attributes.image.data.attributes.height}
+              src={getCmsMedia(page.attributes.image.data.attributes.url)}
+              width={page.attributes.image.data.attributes.width}
+            />
+          )}
         </Box>
         <Box>
           {page.attributes.blocks.map((block, index) =>

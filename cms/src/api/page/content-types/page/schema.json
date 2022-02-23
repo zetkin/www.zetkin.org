@@ -24,8 +24,14 @@
         "blocks.faq-accordion",
         "blocks.logo-wall",
         "blocks.contact-card",
-        "blocks.large-list"
+        "blocks.large-list",
+        "blocks.text-block"
       ]
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
     }
   }
 }
