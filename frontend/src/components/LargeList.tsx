@@ -35,9 +35,9 @@ const LargeList = ({ ...rest }) => {
                   {item.image?.data && (
                     <Image
                       alt={item.image.data.attributes.alternativeText}
-                      height={100}
+                      height={item.image.data.attributes.height}
                       src={getCmsMedia(item.image.data.attributes.url)}
-                      width={100}
+                      width={item.image.data.attributes.width}
                     />
                   )}
                   {item.externalUrl && (
