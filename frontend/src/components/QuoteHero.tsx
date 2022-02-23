@@ -13,12 +13,14 @@ const QuoteHero = ({ ...data }) => {
 
   return (
     <Box>
-      <Image
-        alt={background.data.attributes.alternativeText}
-        height={150}
-        src={backgroundUrl}
-        width={200}
-      />
+      {background.data && (
+        <Image
+          alt={background.data.attributes.alternativeText}
+          height={150}
+          src={backgroundUrl}
+          width={200}
+        />
+      )}
       <Image
         alt={image.data.attributes.alternativeText}
         height={150}
