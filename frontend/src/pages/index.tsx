@@ -4,25 +4,30 @@ import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
 
-import { Page } from '../types/cms';
+import { CmsPage, CmsPost } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 
 interface HomeProps {
-  pages: Page[];
+  pages: CmsPage[];
+  feed: CmsPost[];
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const res = await cmsFetch('/pages');
-  const data = await res.json();
+  const pageRes = await cmsFetch('/pages');
+  const pageData = await pageRes.json();
+
+  const feedRes = await cmsFetch('/feed');
+  const feedData = await feedRes.json();
 
   return {
     props: {
-      pages: data.data,
+      pages: pageData.data,
+      feed: feedData,
     },
   };
 };
 
-const Home: NextPage<HomeProps> = ({ pages }) => {
+const Home: NextPage<HomeProps> = ({ pages, feed }) => {
   return (
     <div>
       <Head>
@@ -49,7 +54,7 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
           {pages.map((page) => (
             <Box key={page.id}>
               <NextLink href={`/${page.id}`}>
-                <Link>Click here for {page.attributes.title}</Link>
+                <Link>{page.attributes.title}</Link>
               </NextLink>
             </Box>
           ))}
@@ -62,6 +67,17 @@ const Home: NextPage<HomeProps> = ({ pages }) => {
           <Typography variant="h1">
             This will be the new website of Zetkin Foundation.
           </Typography>
+          <Box display="flex" flexDirection="row">
+            {feed.map((post, index) => {
+              return (
+                <Box key={index} border={2}>
+                  <Typography variant="h4">{post.title}</Typography>
+                  <Typography>{post.author}</Typography>
+                  <Typography>{post.publishedAt}</Typography>
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
       </main>
     </div>

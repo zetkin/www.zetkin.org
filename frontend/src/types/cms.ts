@@ -63,3 +63,10 @@ interface CmsImageFormats {
 interface CmsImageThumbnail {
   url: string;
 }
+
+export type CmsPost = {
+  title: string;
+  author: string;
+  publishedAt: string;
+  blocks: CmsBlock[];
+};
