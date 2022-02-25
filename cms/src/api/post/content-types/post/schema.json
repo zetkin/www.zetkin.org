@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,10 +22,13 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": [
-        "blocks.image-block",
-        "blocks.text-block"
-      ],
+      "components": ["blocks.image-block", "blocks.text-block"],
+      "required": true
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }

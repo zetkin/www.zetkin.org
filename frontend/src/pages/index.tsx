@@ -4,30 +4,25 @@ import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
 
-import { CmsPage, CmsPost } from '../types/cms';
+import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 
 interface HomeProps {
   pages: CmsPage[];
-  feed: CmsPost[];
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const pageRes = await cmsFetch('/pages');
-  const pageData = await pageRes.json();
-
-  const feedRes = await cmsFetch('/feed');
-  const feedData = await feedRes.json();
+  const res = await cmsFetch('/pages');
+  const data = await res.json();
 
   return {
     props: {
-      pages: pageData.data,
-      feed: feedData,
+      pages: data.data,
     },
   };
 };
 
-const Home: NextPage<HomeProps> = ({ pages, feed }) => {
+const Home: NextPage<HomeProps> = ({ pages }) => {
   return (
     <div>
       <Head>
@@ -67,17 +62,6 @@ const Home: NextPage<HomeProps> = ({ pages, feed }) => {
           <Typography variant="h1">
             This will be the new website of Zetkin Foundation.
           </Typography>
-          <Box display="flex" flexDirection="row">
-            {feed.map((post, index) => {
-              return (
-                <Box key={index} border={2}>
-                  <Typography variant="h4">{post.title}</Typography>
-                  <Typography>{post.author}</Typography>
-                  <Typography>{post.publishedAt}</Typography>
-                </Box>
-              );
-            })}
-          </Box>
         </Box>
       </main>
     </div>

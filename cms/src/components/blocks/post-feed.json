@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_post_feeds",
+  "info": {
+    "displayName": "PostFeed",
+    "icon": "comment-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

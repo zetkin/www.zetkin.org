@@ -14,6 +14,7 @@ import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 import ContactCard from '../components/ContactCard';
 import ImageBlock from '../components/ImageBlock';
+import PostFeed from '../components/PostFeed';
 
 interface PageProps {
   page: CmsPage;
@@ -58,6 +59,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
       case 'blocks.image-block':
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.post-feed':
+        return <PostFeed key={`${__component}-${index}`} {...rest} />;
     }
   };
 

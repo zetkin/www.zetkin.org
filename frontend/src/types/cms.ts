@@ -67,6 +67,15 @@ interface CmsImageThumbnail {
 export type CmsPost = {
   title: string;
   author: string;
+  image: CmsPostImage;
   publishedAt: string;
   blocks: CmsBlock[];
 };
+
+interface CmsPostImage {
+  alternativeText: string;
+  url: string;
+  formats: CmsImageFormats;
+  height: number;
+  width: number;
+}
