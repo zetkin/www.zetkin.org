@@ -22,15 +22,15 @@ const ImageBlock = ({ ...rest }) => {
   const imageSize = setImageSize();
 
   return (
-    <Box>
+    <figure>
       <Image
         alt={description ? description : image.data.attributes.alternativeText}
         height={imageSize.height}
         src={getCmsMedia(image.data.attributes.url)}
         width={imageSize.width}
       />
-      {description && <Typography>{description}</Typography>}
-    </Box>
+      {description && <figcaption>{description}</figcaption>}
+    </figure>
   );
 };
 
