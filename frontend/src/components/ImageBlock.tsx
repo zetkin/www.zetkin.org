@@ -1,5 +1,3 @@
-import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 
@@ -9,28 +7,40 @@ const ImageBlock = ({ ...rest }) => {
   const setImageSize = () => {
     switch (size) {
       case 'small':
-        return { height: 100, width: 150 };
+        return {
+          height: image.data.attributes.height,
+          width: image.data.attributes.width,
+        };
       case 'medium':
-        return { height: 200, width: 300 };
+        return {
+          height: image.data.attributes.height,
+          width: image.data.attributes.width,
+        };
       case 'large':
-        return { height: 300, width: 450 };
+        return {
+          height: image.data.attributes.height,
+          width: image.data.attributes.width,
+        };
       default:
-        return { height: 200, width: 300 };
+        return {
+          height: image.data.attributes.height,
+          width: image.data.attributes.width,
+        };
     }
   };
 
   const imageSize = setImageSize();
 
   return (
-    <Box>
+    <figure>
       <Image
         alt={description ? description : image.data.attributes.alternativeText}
         height={imageSize.height}
         src={getCmsMedia(image.data.attributes.url)}
         width={imageSize.width}
       />
-      {description && <Typography>{description}</Typography>}
-    </Box>
+      {description && <figcaption>{description}</figcaption>}
+    </figure>
   );
 };
 
