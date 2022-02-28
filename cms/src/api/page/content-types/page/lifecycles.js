@@ -1,13 +1,15 @@
 module.exports = {
   async afterFindOne(event) {
-    event.result.blocks = event.result.blocks.map(async (block) => {
-      if (block.__component === 'blocks.post-feed') {
-        const posts = await getPosts();
-        return { ...block, posts };
-      } else {
-        return block;
-      }
-    });
+    event.result.blocks = await Promise.all(
+      event.result.blocks?.map(async (block) => {
+        if (block.__component === 'blocks.post-feed') {
+          const posts = await getPosts();
+          return { ...block, posts };
+        } else {
+          return block;
+        }
+      }) ?? []
+    );
   },
 };
 

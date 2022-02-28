@@ -2,14 +2,14 @@ import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import dayjs from 'dayjs';
 
-import { CmsPost } from '../types/cms';
+import { CmsFeedPost } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
 
 const PostFeed = ({ ...rest }) => {
   const { posts } = rest;
   return (
     <Box>
-      {posts.map((post: CmsPost, index: number) => {
+      {posts.map((post: CmsFeedPost, index: number) => {
         return (
           <Card key={`post-${index}`}>
             <CardMedia

@@ -64,15 +64,23 @@ interface CmsImageThumbnail {
   url: string;
 }
 
-export type CmsPost = {
+export type CmsPost = CmsDoc<{
   title: string;
   author: string;
-  image: CmsPostImage;
+  image: CmsImage;
+  publishedAt: string;
+  blocks: CmsBlock[];
+}>;
+
+export type CmsFeedPost = {
+  title: string;
+  author: string;
+  image: CmsFeedPostImage;
   publishedAt: string;
   blocks: CmsBlock[];
 };
 
-interface CmsPostImage {
+interface CmsFeedPostImage {
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
