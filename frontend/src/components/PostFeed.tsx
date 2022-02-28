@@ -19,7 +19,7 @@ const PostFeed = ({ ...rest }) => {
       {posts.map((post: CmsFeedPost, index: number) => {
         return (
           <Card key={`post-${index}`}>
-            <CardActionArea href={makePostUrl(post.id)}>
+            <CardActionArea href={makePostUrl(post.slug)}>
               <CardMedia
                 alt={post.image.alternativeText}
                 component="img"

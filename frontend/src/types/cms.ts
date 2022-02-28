@@ -65,6 +65,7 @@ interface CmsImageThumbnail {
 }
 
 export type CmsPost = CmsDoc<{
+  slug: string;
   title: string;
   author: string;
   image: CmsImage;
@@ -73,7 +74,7 @@ export type CmsPost = CmsDoc<{
 }>;
 
 export type CmsFeedPost = {
-  id: number;
+  slug: string;
   title: string;
   author: string;
   image: CmsFeedPostImage;

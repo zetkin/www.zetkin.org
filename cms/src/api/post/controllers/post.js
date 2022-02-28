@@ -10,6 +10,7 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
   async find(ctx) {
     const entity = await strapi.entityService.findMany('api::post.post', {
       fields: ['*'],
+      filters: ctx.request.query.filters,
       populate: {
         blocks: {
           populate: {

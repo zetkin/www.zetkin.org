@@ -15,7 +15,7 @@ interface PostProps {
 }
 
 interface PostParams {
-  postId: string;
+  slug: string;
   [key: string]: string;
 }
 
@@ -23,12 +23,13 @@ export const getServerSideProps: GetServerSideProps<
   PostProps,
   PostParams
 > = async (ctx) => {
-  const res = await cmsFetch('/posts/' + ctx.params!.postId);
+  console.log(ctx.params);
+  const res = await cmsFetch('/posts?filters[slug]=' + ctx.params!.postSlug);
   const data = await res.json();
 
   return {
     props: {
-      post: data.data,
+      post: data.data[0] ? data.data[0] : [],
     },
   };
 };
@@ -48,7 +49,7 @@ const PostComponent: NextPage<PostProps> = ({ post }) => {
           }}
         >
           <Typography variant="h2">{post.attributes.title}</Typography>
-          {post.attributes.image.data && (
+          {post.attributes.image?.data && (
             <Image
               alt={post.attributes.image.data.attributes.alternativeText}
               height={post.attributes.image.data.attributes.height}
