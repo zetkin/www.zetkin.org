@@ -31,9 +31,9 @@ export type CmsTimelineNode = {
   image?: CmsImage;
 };
 
-interface CmsImage {
+export type CmsImage = {
   data: CmsImageData;
-}
+};
 
 type CmsImageData = CmsDoc<{
   alternativeText: string;

@@ -13,6 +13,7 @@ import TextBlock from '../components/TextBlock';
 import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 import ContactCard from '../components/ContactCard';
+import PageHeader from '../components/PageHeader';
 
 interface PageProps {
   page: CmsPage;
@@ -71,15 +72,10 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
             color: 'primary.main',
           }}
         >
-          <Typography variant="h2">{page.attributes.title}</Typography>
-          {page.attributes.image && (
-            <Image
-              alt={page.attributes.image.data.attributes.alternativeText}
-              height={page.attributes.image.data.attributes.height}
-              src={getCmsMedia(page.attributes.image.data.attributes.url)}
-              width={page.attributes.image.data.attributes.width}
-            />
-          )}
+          <PageHeader
+            title={page.attributes.title}
+            image={page.attributes.image}
+          />
         </Box>
         <Box>
           {page.attributes.blocks.map((block, index) =>
