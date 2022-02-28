@@ -8,7 +8,7 @@ import getCmsMedia from '../utils/getCmsMedia';
 const PageHeader = ({ title, image }: { title: string; image: CmsImage }) => {
   return (
     <Box>
-      <Typography variant="h2">{title}</Typography>
+      <Typography variant="h1">{title}</Typography>
       {image.data && (
         <Image
           alt={image.data.attributes.alternativeText}
