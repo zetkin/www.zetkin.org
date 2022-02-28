@@ -78,7 +78,7 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
           }}
         >
           <Typography variant="h2">{page.attributes.title}</Typography>
-          {page.attributes.image && (
+          {page.attributes.image.data && (
             <Image
               alt={page.attributes.image.data.attributes.alternativeText}
               height={page.attributes.image.data.attributes.height}
