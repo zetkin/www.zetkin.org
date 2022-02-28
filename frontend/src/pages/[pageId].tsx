@@ -10,10 +10,10 @@ import { CmsPage } from '../types/cms';
 import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
 import TextBlock from '../components/TextBlock';
-import Image from 'next/image';
-import getCmsMedia from '../utils/getCmsMedia';
 import ContactCard from '../components/ContactCard';
 import LargeList from '../components/LargeList';
+import PageHeader from '../components/PageHeader';
+import ImageBlock from '../components/ImageBlock';
 
 interface PageProps {
   page: CmsPage;
@@ -58,6 +58,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
       case 'blocks.large-list':
         return <LargeList key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.image-block':
+        return <ImageBlock key={`${__component}-${index}`} {...rest} />;
     }
   };
 
@@ -74,15 +76,10 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
             color: 'primary.main',
           }}
         >
-          <Typography variant="h2">{page.attributes.title}</Typography>
-          {page.attributes.image && (
-            <Image
-              alt={page.attributes.image.data.attributes.alternativeText}
-              height={page.attributes.image.data.attributes.height}
-              src={getCmsMedia(page.attributes.image.data.attributes.url)}
-              width={page.attributes.image.data.attributes.width}
-            />
-          )}
+          <PageHeader
+            title={page.attributes.title}
+            image={page.attributes.image}
+          />
         </Box>
         <Box>
           {page.attributes.blocks.map((block, index) =>
