@@ -73,6 +73,7 @@ export type CmsPost = CmsDoc<{
 }>;
 
 export type CmsFeedPost = {
+  id: number;
   title: string;
   author: string;
   image: CmsFeedPostImage;
