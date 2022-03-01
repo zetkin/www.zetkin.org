@@ -22,7 +22,11 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["blocks.image-block", "blocks.text-block"],
+      "components": [
+        "blocks.image-block",
+        "blocks.text-block",
+        "blocks.section-divider"
+      ],
       "required": true
     },
     "image": {

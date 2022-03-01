@@ -22,7 +22,6 @@ export const getServerSideProps: GetServerSideProps<
   PostProps,
   PostParams
 > = async (ctx) => {
-  console.log(ctx.params);
   const res = await cmsFetch('/posts?filters[slug]=' + ctx.params!.postSlug);
   const data = await res.json();
 

@@ -26,7 +26,8 @@
         "blocks.text-block",
         "blocks.contact-card",
         "blocks.image-block",
-        "blocks.post-feed"
+        "blocks.post-feed",
+        "blocks.section-divider"
       ]
     },
     "image": {

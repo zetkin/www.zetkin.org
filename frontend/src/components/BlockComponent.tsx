@@ -4,6 +4,7 @@ import ImageBlock from './ImageBlock';
 import LogoWall from './LogoWall';
 import PostFeed from './PostFeed';
 import QuoteHero from './QuoteHero';
+import SectionDivider from './SectionDivider';
 import TextBlock from './TextBlock';
 import Timeline from './Timeline';
 
@@ -25,6 +26,8 @@ const BlockComponent = ({ __component, ...block }: { __component: string }) => {
       return <ImageBlock {...block} />;
     case 'blocks.post-feed':
       return <PostFeed {...block} />;
+    case 'blocks.section-divider':
+      return <SectionDivider {...block} />;
     default:
       return <></>;
   }
