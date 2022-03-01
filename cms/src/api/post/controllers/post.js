@@ -17,6 +17,7 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
             image: true,
           },
         },
+        image: true,
       },
     });
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
