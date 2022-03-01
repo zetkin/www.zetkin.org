@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_blurb_groups",
+  "info": {
+    "displayName": "BlurbGroup",
+    "icon": "th-large"
+  },
+  "options": {},
+  "attributes": {
+    "blurbs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.blurb",
+      "required": true
+    }
+  }
+}
