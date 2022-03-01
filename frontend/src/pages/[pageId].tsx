@@ -16,6 +16,7 @@ import Blurb from '../components/Blurb';
 import PageHeader from '../components/PageHeader';
 import ImageBlock from '../components/ImageBlock';
 import BlurbGroup from '../components/BlurbGroup';
+import Feature from '../components/Feature';
 
 interface PageProps {
   page: CmsPage;
@@ -66,6 +67,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
       case 'blocks.blurb-group':
         return <BlurbGroup key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.feature':
+        return <Feature key={`${__component}-${index}`} {...rest} />;
     }
   };
 
