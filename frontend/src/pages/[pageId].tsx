@@ -11,6 +11,7 @@ import cmsFetch from '../utils/cmsFetch';
 import LogoWall from '../components/LogoWall';
 import TextBlock from '../components/TextBlock';
 import ContactCard from '../components/ContactCard';
+import LargeList from '../components/LargeList';
 import PageHeader from '../components/PageHeader';
 import ImageBlock from '../components/ImageBlock';
 
@@ -55,6 +56,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <LogoWall key={`${__component}-${index}`} {...rest} />;
       case 'blocks.contact-card':
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.large-list':
+        return <LargeList key={`${__component}-${index}`} {...rest} />;
       case 'blocks.image-block':
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
     }
