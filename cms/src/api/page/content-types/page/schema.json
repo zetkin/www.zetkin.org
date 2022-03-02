@@ -25,7 +25,8 @@
         "blocks.logo-wall",
         "blocks.text-block",
         "blocks.contact-card",
-        "blocks.image-block"
+        "blocks.image-block",
+        "blocks.super-hero"
       ]
     },
     "image": {

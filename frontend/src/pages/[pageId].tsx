@@ -13,6 +13,7 @@ import TextBlock from '../components/TextBlock';
 import ContactCard from '../components/ContactCard';
 import PageHeader from '../components/PageHeader';
 import ImageBlock from '../components/ImageBlock';
+import SuperHero from '../components/SuperHero';
 
 interface PageProps {
   page: CmsPage;
@@ -57,6 +58,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
       case 'blocks.image-block':
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.super-hero':
+        return <SuperHero key={`${__component}-${index}`} {...rest} />;
     }
   };
 

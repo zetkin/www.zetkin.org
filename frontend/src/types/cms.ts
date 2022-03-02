@@ -35,7 +35,7 @@ export type CmsImage = {
   data: CmsImageData;
 };
 
-type CmsImageData = CmsDoc<{
+export type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
