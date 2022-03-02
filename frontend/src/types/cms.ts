@@ -79,3 +79,13 @@ interface CmsPostImage {
   height: number;
   width: number;
 }
+
+export type CmsListItem = {
+  id: number;
+  title: string;
+  content?: string;
+  image?: CmsImage;
+  externalUrl?: string;
+  page?: CmsPage;
+  linkLabel?: string;
+};
