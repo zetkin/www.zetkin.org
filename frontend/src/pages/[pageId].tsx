@@ -71,11 +71,7 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
       </Head>
 
       <main>
-        <Box
-          sx={{
-            color: 'primary.main',
-          }}
-        >
+        <Box>
           <PageHeader
             title={page.attributes.title}
             image={page.attributes.image}

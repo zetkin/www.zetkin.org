@@ -14,10 +14,17 @@ import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 
 const Timeline = ({ ...rest }) => {
-  const { nodes } = rest;
+  const { nodes, title } = rest;
   return (
-    <Box>
-      <MuiTimeline>
+    <Box
+      sx={{
+        backgroundColor: 'white',
+        textAlign: 'center',
+        padding: '4em',
+      }}
+    >
+      <Typography variant="h3">{title}</Typography>
+      <MuiTimeline position="alternate">
         {nodes.map((node: CmsTimelineNode, index: string) => (
           <TimelineItem key={`node-${index}`}>
             <TimelineSeparator>
@@ -25,14 +32,18 @@ const Timeline = ({ ...rest }) => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Typography>{node.title}</Typography>
-              <Typography>{node.content}</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                {node.title}
+              </Typography>
+              <Typography variant="body1">{node.content}</Typography>
               {node.image?.data && (
                 <Image
                   alt={node.image?.data?.attributes.alternativeText}
-                  height="150"
-                  src={getCmsMedia(node.image.data.attributes.url)}
-                  width="200"
+                  src={getCmsMedia(
+                    node.image.data.attributes.formats.thumbnail.url
+                  )}
+                  height={node.image?.data?.attributes.formats.thumbnail.height}
+                  width={node.image?.data.attributes.formats.thumbnail.width}
                 />
               )}
             </TimelineContent>
