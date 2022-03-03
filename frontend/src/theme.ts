@@ -1,9 +1,10 @@
 import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+
 
 // Create a theme instance.
 const theme = createTheme({
   palette: {
+    mode: 'light',
     primary: {
       main: '#ee323e',
     },
@@ -11,9 +12,26 @@ const theme = createTheme({
       main: '#48baeb',
     },
     error: {
-      main: red.A400,
+      main: '#ff1744',
     },
   },
+  shape: {
+    borderRadius: 10,
+  },
+  typography: {
+    fontFamily: 'Catamaran',
+    fontSize: 16,
+    h1: {
+      fontWeight: 'bold',
+    },
+    h2: {
+      fontWeight: 'bold',
+    },
+    h3: {
+      fontWeight: 'bold',
+    },
+  },
+  spacing: 10,
 });
 
 export default theme;
