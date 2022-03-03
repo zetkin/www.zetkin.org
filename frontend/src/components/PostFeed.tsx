@@ -10,7 +10,6 @@ import dayjs from 'dayjs';
 
 import { CmsFeedPost } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
-import makePostUrl from '../utils/makePostUrl';
 
 const PostFeed = ({ ...rest }) => {
   const { posts } = rest;
@@ -19,7 +18,7 @@ const PostFeed = ({ ...rest }) => {
       {posts.map((post: CmsFeedPost, index: number) => {
         return (
           <Card key={`post-${index}`}>
-            <CardActionArea href={makePostUrl(post.slug)}>
+            <CardActionArea href={`/posts/${post.slug}`}>
               <CardMedia
                 alt={post.image.alternativeText}
                 component="img"
