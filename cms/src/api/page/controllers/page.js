@@ -27,6 +27,11 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
                 },
               },
               image: true,
+              images: {
+                populate: {
+                  image: true,
+                },
+              },
               links: {
                 populate: {
                   page: true,
