@@ -7,7 +7,11 @@ import { CmsLink } from '../types/cms';
 
 const LinkArea = ({ ...links }) => {
   return (
-    <Box>
+    <Box
+      sx={{
+        paddingTop: '1rem',
+      }}
+    >
       {Object.values(links).map((link: CmsLink, index: number) => {
         //jag låtsas att vi kan kontrollera i strapi att man ALLTID fyller i ena lr andra
         const href = link.externalUrl
@@ -16,8 +20,10 @@ const LinkArea = ({ ...links }) => {
 
         return (
           <NextLink key={`link-${index}`} href={href} passHref>
-            <Link>
-              <Typography>{link.label}</Typography>
+            <Link underline="none">
+              <Typography variant="h6" fontWeight="bold">
+                {link.label}
+              </Typography>
             </Link>
           </NextLink>
         );
