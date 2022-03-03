@@ -25,6 +25,7 @@
         "blocks.logo-wall",
         "blocks.contact-card",
         "blocks.large-list",
+        "blocks.blurb",
         "blocks.text-block",
         "blocks.image-block"
       ]
