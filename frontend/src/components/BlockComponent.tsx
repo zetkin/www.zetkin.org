@@ -1,9 +1,12 @@
+import Blurb from '../components/Blurb';
 import ContactCard from './ContactCard';
 import FaqAccordion from './FaqAccordion';
 import ImageBlock from './ImageBlock';
+import LargeList from '../components/LargeList';
 import LogoWall from './LogoWall';
 import PostFeed from './PostFeed';
 import QuoteHero from './QuoteHero';
+import SuperHero from '../components/SuperHero';
 import TextBlock from './TextBlock';
 import Timeline from './Timeline';
 
@@ -25,6 +28,12 @@ const BlockComponent = ({ __component, ...block }: { __component: string }) => {
       return <ImageBlock {...block} />;
     case 'blocks.post-feed':
       return <PostFeed {...block} />;
+    case 'blocks.blurb':
+      return <Blurb {...block} />;
+    case 'blocks.large-list':
+      return <LargeList {...block} />;
+    case 'blocks.super-hero':
+      return <SuperHero {...block} />;
     default:
       return <></>;
   }

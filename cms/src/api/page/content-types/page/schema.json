@@ -23,10 +23,13 @@
         "blocks.timeline",
         "blocks.faq-accordion",
         "blocks.logo-wall",
-        "blocks.text-block",
         "blocks.contact-card",
-        "blocks.image-block",
-        "blocks.post-feed"
+        "blocks.post-feed",
+        "blocks.super-hero",
+        "blocks.large-list",
+        "blocks.blurb",
+        "blocks.text-block",
+        "blocks.image-block"
       ]
     },
     "image": {
