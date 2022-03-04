@@ -35,7 +35,7 @@ export type CmsImage = {
   data: CmsImageData;
 };
 
-type CmsImageData = CmsDoc<{
+export type CmsImageData = CmsDoc<{
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
@@ -62,6 +62,22 @@ interface CmsImageFormats {
 
 interface CmsImageThumbnail {
   url: string;
+}
+
+export type CmsPost = {
+  title: string;
+  author: string;
+  image: CmsPostImage;
+  publishedAt: string;
+  blocks: CmsBlock[];
+};
+
+interface CmsPostImage {
+  alternativeText: string;
+  url: string;
+  formats: CmsImageFormats;
+  height: number;
+  width: number;
 }
 
 export type CmsListItem = {

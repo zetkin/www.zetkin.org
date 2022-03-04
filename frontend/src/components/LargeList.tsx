@@ -12,32 +12,31 @@ import NextLink from 'next/link';
 
 import { CmsListItem } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
-import makePageUrl from '../utils/makePageUrl';
 
 const LargeList = ({ ...rest }) => {
   const { title, listItems } = rest;
 
   return (
     <List>
-      {title && <Typography>{title}</Typography>}
+      {title && <Typography variant="h4">{title}</Typography>}
       {listItems.map((item: CmsListItem, index: number) => {
         return (
           <ListItem key={`listItem-${index}`}>
             <ListItemAvatar>
-              <Avatar>{item.id}</Avatar>
+              <Avatar>{index + 1}</Avatar>
             </ListItemAvatar>
             <ListItemText
               disableTypography={true}
-              primary={`${item.title}`}
+              primary={<Typography variant="h5">{item.title}</Typography>}
               secondary={
                 <>
                   {item.content && <Typography>{item.content}</Typography>}
                   {item.image?.data && (
                     <Image
                       alt={item.image.data.attributes.alternativeText}
-                      height={100}
+                      height={item.image.data.attributes.height}
                       src={getCmsMedia(item.image.data.attributes.url)}
-                      width={100}
+                      width={item.image.data.attributes.width}
                     />
                   )}
                   {item.externalUrl && (
@@ -48,7 +47,7 @@ const LargeList = ({ ...rest }) => {
                     </NextLink>
                   )}
                   {item.page?.data && (
-                    <NextLink href={makePageUrl(item.page.data.id)} passHref>
+                    <NextLink href={`/${item.page.data.id}`} passHref>
                       <Link>
                         {item.linkLabel
                           ? item.linkLabel
