@@ -18,19 +18,6 @@ const theme = createTheme({
   shape: {
     borderRadius: 10,
   },
-  typography: {
-    fontFamily: 'Catamaran',
-    fontSize: 16,
-    h1: {
-      fontWeight: 'bold',
-    },
-    h2: {
-      fontWeight: 'bold',
-    },
-    h3: {
-      fontWeight: 'bold',
-    },
-  },
   spacing: 10,
 });
 
