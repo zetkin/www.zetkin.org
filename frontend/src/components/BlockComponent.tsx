@@ -6,6 +6,7 @@ import LargeList from '../components/LargeList';
 import LogoWall from './LogoWall';
 import PostFeed from './PostFeed';
 import QuoteHero from './QuoteHero';
+import SectionDivider from './SectionDivider';
 import SuperHero from '../components/SuperHero';
 import TextBlock from './TextBlock';
 import Timeline from './Timeline';
@@ -30,6 +31,8 @@ const BlockComponent = ({ __component, ...block }: { __component: string }) => {
       return <ImageBlock {...block} />;
     case 'blocks.post-feed':
       return <PostFeed {...block} />;
+    case 'blocks.section-divider':
+      return <SectionDivider {...block} />;
     case 'blocks.blurb':
       return <Blurb {...block} />;
     case 'blocks.large-list':
