@@ -29,7 +29,8 @@
         "blocks.large-list",
         "blocks.blurb",
         "blocks.text-block",
-        "blocks.image-block"
+        "blocks.image-block",
+        "blocks.blurb-group"
       ]
     },
     "image": {
