@@ -22,7 +22,7 @@
     },
     "linkLabel": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "externalUrl": {
       "type": "string"

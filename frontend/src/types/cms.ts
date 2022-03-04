@@ -99,3 +99,12 @@ export type CmsListItem = {
   page?: CmsPage;
   linkLabel?: string;
 };
+
+export type CmsBlurb = {
+  title: string;
+  content: string;
+  icon: string;
+  linkLabel: string;
+  externalUrl: string;
+  page: CmsPage;
+};

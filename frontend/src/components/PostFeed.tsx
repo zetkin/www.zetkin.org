@@ -6,10 +6,10 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import dayjs from 'dayjs';
 
 import { CmsFeedPost } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
+import formatDate from '../utils/formatDate';
 
 const PostFeed = ({ ...rest }) => {
   const { posts } = rest;
@@ -28,9 +28,7 @@ const PostFeed = ({ ...rest }) => {
               <CardContent>
                 <Typography variant="h4">{post.title}</Typography>
                 <Typography>{post.author}</Typography>
-                <Typography>
-                  {dayjs(post.publishedAt).format('DD/MM/YYYY')}
-                </Typography>
+                <Typography>{formatDate(post.publishedAt)}</Typography>
               </CardContent>
             </CardActionArea>
           </Card>
