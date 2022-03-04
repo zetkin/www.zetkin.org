@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_section_dividers",
+  "info": {
+    "displayName": "SectionDivider",
+    "icon": "minus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

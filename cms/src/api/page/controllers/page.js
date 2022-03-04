@@ -20,6 +20,7 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
             populate: {
               accordionItems: true,
               background: true,
+              blurb: true,
               blurbs: {
                 populate: {
                   links: true,

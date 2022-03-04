@@ -22,14 +22,21 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["blocks.image-block", "blocks.text-block"],
+      "components": [
+        "blocks.image-block",
+        "blocks.text-block",
+        "blocks.section-divider"
+      ],
       "required": true
     },
     "image": {
-      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

@@ -66,15 +66,25 @@ interface CmsImageThumbnail {
   width: number;
 }
 
-export type CmsPost = {
+export type CmsPost = CmsDoc<{
+  slug: string;
   title: string;
   author: string;
-  image: CmsPostImage;
+  image: CmsImage;
+  publishedAt: string;
+  blocks: CmsBlock[];
+}>;
+
+export type CmsFeedPost = {
+  slug: string;
+  title: string;
+  author: string;
+  image: CmsFeedPostImage;
   publishedAt: string;
   blocks: CmsBlock[];
 };
 
-interface CmsPostImage {
+interface CmsFeedPostImage {
   alternativeText: string;
   url: string;
   formats: CmsImageFormats;
