@@ -11,21 +11,25 @@ const PageHeader = ({ title, image }: { title: string; image: CmsImage }) => {
   return (
     <Box
       sx={{
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        paddingTop: '6.75rem',
         textAlign: 'center',
+        color: 'palette.text.primary',
+        paddingTop: '6.75rem',
+        paddingBottom: '2rem',
+        marginBottom: '4em',
+        background: background,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        marginBottom: '4em',
-        width: '100%',
-        background: background,
         backgroundBlendMode: 'multiply',
       }}
     >
-      <Typography variant="h1">{title}</Typography>
+      <Typography variant="h1" fontWeight="bold">
+        {title}
+      </Typography>
     </Box>
   );
 };
