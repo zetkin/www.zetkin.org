@@ -11,11 +11,9 @@ import InfoIcon from '@mui/icons-material/Info';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import NextLink from 'next/link';
 
-import makePageUrl from '../utils/makePageUrl';
-
 const Blurb = ({ ...rest }) => {
   const { title, content, icon, linkLabel, externalUrl, page } = rest;
-  const href = externalUrl ? externalUrl : makePageUrl(page!.data.id);
+  const href = externalUrl ? externalUrl : `/${page!.data.id}`;
 
   const iconSwitch = () => {
     switch (icon) {
