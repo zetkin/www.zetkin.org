@@ -10,22 +10,20 @@ const QuoteHero = ({ ...data }) => {
 
   const imageUrl = getCmsMedia(image.data.attributes.url);
 
-  const backgroundImage =
-    background.data &&
-    `url(${getCmsMedia(background.data.attributes.url)}) rgba(0, 0, 0, 0.7)`;
+  const backgroundImage = background.data
+    ? `url(${getCmsMedia(background.data.attributes.url)}) rgba(0, 0, 0, 0.7)`
+    : 'secondary.main';
 
   return (
     <Box
       sx={{
-        backgroundColor: '#231f20',
-        color: '#fff',
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
         background: backgroundImage,
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '100%',
+        backgroundSize: 'cover',
         marginBottom: '4em',
         padding: '2em',
       }}

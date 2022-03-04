@@ -18,7 +18,6 @@ const Timeline = ({ ...rest }) => {
   return (
     <Box
       sx={{
-        backgroundColor: 'white',
         textAlign: 'center',
         padding: '4em',
       }}
