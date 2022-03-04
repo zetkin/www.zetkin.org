@@ -45,7 +45,13 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
             image={page.attributes.image}
           />
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: { lg: 'flex' },
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           {page.attributes.blocks.map((block, index) => (
             <BlockComponent key={`block-${index}`} {...block} />
           ))}
