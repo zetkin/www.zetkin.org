@@ -10,6 +10,7 @@ import SuperHero from '../components/SuperHero';
 import TextBlock from './TextBlock';
 import Timeline from './Timeline';
 import BlurbGroup from '../components/BlurbGroup';
+import Feature from '../components/Feature';
 
 const BlockComponent = ({ __component, ...block }: { __component: string }) => {
   switch (__component) {
@@ -37,6 +38,8 @@ const BlockComponent = ({ __component, ...block }: { __component: string }) => {
       return <SuperHero {...block} />;
     case 'blocks.blurb-group':
       return <BlurbGroup {...block} />;
+    case 'blocks.feature':
+      return <Feature {...block} />;
     default:
       return <></>;
   }
