@@ -12,7 +12,6 @@ import NextLink from 'next/link';
 
 import { CmsListItem } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
-import makePageUrl from '../utils/makePageUrl';
 
 const LargeList = ({ ...rest }) => {
   const { title, listItems } = rest;
@@ -48,7 +47,7 @@ const LargeList = ({ ...rest }) => {
                     </NextLink>
                   )}
                   {item.page?.data && (
-                    <NextLink href={makePageUrl(item.page.data.id)} passHref>
+                    <NextLink href={`/${item.page.data.id}`} passHref>
                       <Link>
                         {item.linkLabel
                           ? item.linkLabel

@@ -12,8 +12,12 @@ import LogoWall from '../components/LogoWall';
 import TextBlock from '../components/TextBlock';
 import ContactCard from '../components/ContactCard';
 import LargeList from '../components/LargeList';
+import Blurb from '../components/Blurb';
 import PageHeader from '../components/PageHeader';
 import ImageBlock from '../components/ImageBlock';
+import BlurbGroup from '../components/BlurbGroup';
+import PostFeed from '../components/PostFeed';
+import SuperHero from '../components/SuperHero';
 
 interface PageProps {
   page: CmsPage;
@@ -58,8 +62,16 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <ContactCard key={`${__component}-${index}`} {...rest} />;
       case 'blocks.large-list':
         return <LargeList key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.blurb':
+        return <Blurb key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.blurb-group':
+        return <BlurbGroup key={`${__component}-${index}`} {...rest} />;
       case 'blocks.image-block':
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.post-feed':
+        return <PostFeed key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.super-hero':
+        return <SuperHero key={`${__component}-${index}`} {...rest} />;
     }
   };
 

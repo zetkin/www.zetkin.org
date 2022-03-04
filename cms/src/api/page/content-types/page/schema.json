@@ -24,9 +24,13 @@
         "blocks.faq-accordion",
         "blocks.logo-wall",
         "blocks.contact-card",
+        "blocks.post-feed",
+        "blocks.super-hero",
         "blocks.large-list",
+        "blocks.blurb",
         "blocks.text-block",
-        "blocks.image-block"
+        "blocks.image-block",
+        "blocks.blurb-group"
       ]
     },
     "image": {
