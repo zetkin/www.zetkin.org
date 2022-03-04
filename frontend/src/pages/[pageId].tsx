@@ -16,6 +16,7 @@ import Blurb from '../components/Blurb';
 import PageHeader from '../components/PageHeader';
 import ImageBlock from '../components/ImageBlock';
 import BlurbGroup from '../components/BlurbGroup';
+import PostFeed from '../components/PostFeed';
 import SuperHero from '../components/SuperHero';
 
 interface PageProps {
@@ -67,6 +68,8 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
         return <BlurbGroup key={`${__component}-${index}`} {...rest} />;
       case 'blocks.image-block':
         return <ImageBlock key={`${__component}-${index}`} {...rest} />;
+      case 'blocks.post-feed':
+        return <PostFeed key={`${__component}-${index}`} {...rest} />;
       case 'blocks.super-hero':
         return <SuperHero key={`${__component}-${index}`} {...rest} />;
     }
