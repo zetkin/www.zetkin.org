@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_blocks_blurbs",
+  "info": {
+    "displayName": "Blurb",
+    "icon": "square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": ["coin", "questionmark", "info", "clock"],
+      "required": false
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": true
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

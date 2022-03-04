@@ -2,12 +2,12 @@ import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import dayjs from 'dayjs';
 
 import { CmsPost } from '../../types/cms';
 import cmsFetch from '../../utils/cmsFetch';
 import BlockComponent from '../../components/BlockComponent';
 import PageHeader from '../../components/PageHeader';
+import formatDate from '../../utils/formatDate';
 
 interface PostProps {
   post: CmsPost;
@@ -50,9 +50,7 @@ const PostComponent: NextPage<PostProps> = ({ post }) => {
             title={post.attributes.title}
             image={post.attributes.image}
           />
-          <Typography>
-            {dayjs(post.attributes.publishedAt).format('DD/MM/YYYY')}
-          </Typography>
+          <Typography>{formatDate(post.attributes.publishedAt)}</Typography>
           <Typography>{post.attributes.author}</Typography>
         </Box>
         <Box>

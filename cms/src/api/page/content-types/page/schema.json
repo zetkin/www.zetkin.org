@@ -23,11 +23,17 @@
         "blocks.timeline",
         "blocks.faq-accordion",
         "blocks.logo-wall",
-        "blocks.text-block",
         "blocks.contact-card",
+        "blocks.post-feed",
+        "blocks.super-hero",
+        "blocks.large-list",
+        "blocks.blurb",
+        "blocks.text-block",
         "blocks.image-block",
         "blocks.post-feed",
-        "blocks.section-divider"
+        "blocks.section-divider",
+        "blocks.feature",
+        "blocks.blurb-group"
       ]
     },
     "image": {

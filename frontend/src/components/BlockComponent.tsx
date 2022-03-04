@@ -1,12 +1,17 @@
+import Blurb from '../components/Blurb';
 import ContactCard from './ContactCard';
 import FaqAccordion from './FaqAccordion';
 import ImageBlock from './ImageBlock';
+import LargeList from '../components/LargeList';
 import LogoWall from './LogoWall';
 import PostFeed from './PostFeed';
 import QuoteHero from './QuoteHero';
 import SectionDivider from './SectionDivider';
+import SuperHero from '../components/SuperHero';
 import TextBlock from './TextBlock';
 import Timeline from './Timeline';
+import BlurbGroup from '../components/BlurbGroup';
+import Feature from '../components/Feature';
 
 const BlockComponent = ({ __component, ...block }: { __component: string }) => {
   switch (__component) {
@@ -28,6 +33,16 @@ const BlockComponent = ({ __component, ...block }: { __component: string }) => {
       return <PostFeed {...block} />;
     case 'blocks.section-divider':
       return <SectionDivider {...block} />;
+    case 'blocks.blurb':
+      return <Blurb {...block} />;
+    case 'blocks.large-list':
+      return <LargeList {...block} />;
+    case 'blocks.super-hero':
+      return <SuperHero {...block} />;
+    case 'blocks.blurb-group':
+      return <BlurbGroup {...block} />;
+    case 'blocks.feature':
+      return <Feature {...block} />;
     default:
       return <></>;
   }

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_features",
+  "info": {
+    "displayName": "Feature",
+    "icon": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "imagePlacement": {
+      "type": "enumeration",
+      "enum": ["right", "left"],
+      "required": true
+    },
+    "blurb": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.blurb",
+      "required": true
+    }
+  }
+}

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { CmsLogo } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
-import makePageUrl from '../utils/makePageUrl';
 
 const LogoWall = ({ ...rest }) => {
   const { logos } = rest;
@@ -15,9 +14,7 @@ const LogoWall = ({ ...rest }) => {
         return logo.externalUrl || logo.page ? (
           <NextLink
             href={
-              logo.externalUrl
-                ? logo.externalUrl
-                : makePageUrl(logo.page!.data?.id)
+              logo.externalUrl ? logo.externalUrl : `/${logo.page!.data?.id}`
             }
             key={`logo-${index}`}
             passHref
