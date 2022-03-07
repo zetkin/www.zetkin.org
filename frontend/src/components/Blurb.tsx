@@ -41,7 +41,12 @@ const Blurb = ({ ...rest }) => {
     <Card
       sx={{
         width: { lg: '23rem' },
+        minHeight: { lg: '10rem' },
         marginBottom: { lg: '4rem' },
+        display: { lg: 'flex' },
+        flexDirection: { lg: 'column' },
+        justifyContent: { lg: 'space-between' },
+        alignItems: 'center',
         boxShadow: 0,
       }}
     >
@@ -57,11 +62,13 @@ const Blurb = ({ ...rest }) => {
         </Box>
       )}
       <CardContent>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography align="center" variant="h4" fontWeight="bold">
           {title}
         </Typography>
         {content && (
-          <Typography sx={{ marginTop: '1em' }}>{content}</Typography>
+          <Typography align="center" fontSize="20px" sx={{ marginTop: '1em' }}>
+            {content}
+          </Typography>
         )}
       </CardContent>
       {linkLabel && (
