@@ -42,6 +42,7 @@ const Blurb = ({ ...rest }) => {
       sx={{
         width: { lg: '23rem' },
         minHeight: { lg: '10rem' },
+        maxHeight: { lg: '20rem' },
         marginBottom: { lg: '4rem' },
         display: { lg: 'flex' },
         flexDirection: { lg: 'column' },
