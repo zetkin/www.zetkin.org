@@ -1,6 +1,6 @@
 import { Box } from '@mui/system';
 import NextLink from 'next/link';
-import { Link, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 
 import { CmsLink } from '../types/cms';
 
@@ -19,11 +19,17 @@ const LinkArea = ({ ...links }) => {
 
         return (
           <NextLink key={`link-${index}`} href={href} passHref>
-            <Link underline="none">
-              <Typography variant="h6" fontWeight="bold">
-                {link.label}
-              </Typography>
-            </Link>
+            <Button
+              sx={{
+                borderRadius: '2em',
+                textTransform: 'none',
+                fontSize: '18pt',
+                padding: '0.5em 1.5em',
+              }}
+              variant="contained"
+            >
+              {link.label}
+            </Button>
           </NextLink>
         );
       })}
