@@ -1,3 +1,4 @@
+import { Box } from '@mui/system';
 import { marked } from 'marked';
 import santitizeHtml from 'sanitize-html';
 
@@ -6,7 +7,11 @@ const TextBlock = ({ ...rest }) => {
   const dirtyHTML = marked.parse(content);
   const cleanHTML = santitizeHtml(dirtyHTML);
 
-  return <div dangerouslySetInnerHTML={{ __html: cleanHTML }} />;
+  return (
+    <Box sx={{ width: { lg: '50%' } }}>
+      <div dangerouslySetInnerHTML={{ __html: cleanHTML }} />
+    </Box>
+  );
 };
 
 export default TextBlock;
