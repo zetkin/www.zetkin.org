@@ -17,7 +17,7 @@ const PageHeader = ({ title, image }: { title: string; image: CmsImage }) => {
         alignItems: 'center',
         justifyContent: 'flex-end',
         textAlign: 'center',
-        color: 'palette.text.primary',
+        color: 'common.white',
         paddingTop: '6.75rem',
         paddingBottom: '2rem',
         marginBottom: '4em',
