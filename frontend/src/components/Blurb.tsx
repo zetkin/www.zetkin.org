@@ -3,8 +3,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
-  Link,
   Typography,
 } from '@mui/material';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';

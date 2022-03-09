@@ -1,14 +1,11 @@
 import {
-  Button,
   Card,
-  CardActions,
   CardActionArea,
   CardContent,
   CardMedia,
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import NextLink from 'next/link';
 
 import { CmsFeedPost } from '../types/cms';
 import getCmsMedia from '../utils/getCmsMedia';
@@ -17,7 +14,7 @@ import formatDate from '../utils/formatDate';
 const PostFeed = ({ ...rest }) => {
   const { posts, title } = rest;
   return (
-    <Box sx={{ width: '70%' }}>
+    <Box sx={{ width: '70%', marginBottom: '4rem' }}>
       <Typography variant="h3" fontWeight="bold" my={1.5}>
         {title}
       </Typography>
@@ -51,8 +48,13 @@ const PostFeed = ({ ...rest }) => {
                   height={200}
                   image={getCmsMedia(post.image.url)}
                 />
-                <CardContent>
-                  <Typography variant="h5" fontWeight="bold" textAlign="left">
+                <CardContent sx={{ color: 'palette.text.secondary' }}>
+                  <Typography
+                    variant="h5"
+                    fontWeight="bold"
+                    textAlign="left"
+                    color="palette.text.secondary"
+                  >
                     {post.title}
                   </Typography>
                   <Typography>{post.author}</Typography>
