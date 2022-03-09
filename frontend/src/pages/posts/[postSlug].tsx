@@ -41,19 +41,21 @@ const PostComponent: NextPage<PostProps> = ({ post }) => {
       </Head>
 
       <main>
+        <PageHeader
+          title={post.attributes.title}
+          image={post.attributes.image}
+        />
         <Box
           sx={{
-            color: 'primary.main',
+            display: { lg: 'flex' },
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
-          <PageHeader
-            title={post.attributes.title}
-            image={post.attributes.image}
-          />
-          <Typography>{formatDate(post.attributes.publishedAt)}</Typography>
-          <Typography>{post.attributes.author}</Typography>
-        </Box>
-        <Box>
+          <Typography variant="h5">
+            {formatDate(post.attributes.publishedAt)}
+          </Typography>
+          <Typography variant="h5">{post.attributes.author}</Typography>
           {post.attributes.blocks.map((block, index) => (
             <BlockComponent key={`block-${index}`} {...block} />
           ))}
