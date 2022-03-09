@@ -9,7 +9,15 @@ const LogoWall = ({ ...rest }) => {
   const { logos } = rest;
 
   return (
-    <Box>
+    <Box
+      sx={{
+        width: '70%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginBottom: '4rem',
+      }}
+    >
       {logos.map((logo: CmsLogo, index: number) => {
         return logo.externalUrl || logo.page ? (
           <NextLink
