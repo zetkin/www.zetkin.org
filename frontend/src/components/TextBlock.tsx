@@ -8,7 +8,7 @@ const TextBlock = ({ ...rest }) => {
   const cleanHTML = santitizeHtml(dirtyHTML);
 
   return (
-    <Box sx={{ width: { lg: '50%' } }}>
+    <Box sx={{ width: { lg: '50%' }, marginBottom: '4rem' }}>
       <div dangerouslySetInnerHTML={{ __html: cleanHTML }} />
     </Box>
   );

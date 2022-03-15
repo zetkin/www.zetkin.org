@@ -20,6 +20,7 @@ const LargeList = ({ ...rest }) => {
     <List
       sx={{
         width: { lg: '60%' },
+        marginBottom: '4rem',
       }}
     >
       {title && (

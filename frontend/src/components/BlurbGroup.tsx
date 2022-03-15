@@ -6,7 +6,6 @@ const BlurbGroup = ({ ...block }) => {
   const { blurbs } = block;
 
   const length = blurbs.length;
-  console.log(length);
   return (
     <Box
       sx={

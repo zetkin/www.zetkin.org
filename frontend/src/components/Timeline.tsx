@@ -18,8 +18,9 @@ const Timeline = ({ ...rest }) => {
   return (
     <Box
       sx={{
+        width: { lg: '70%' },
         textAlign: 'center',
-        padding: '4em',
+        marginBottom: '4rem',
       }}
     >
       <Typography variant="h3">{title}</Typography>
