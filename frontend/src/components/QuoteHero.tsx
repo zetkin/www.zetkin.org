@@ -1,6 +1,5 @@
-import { Typography } from '@mui/material';
+import { CardMedia, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import Image from 'next/image';
 
 import getCmsMedia from '../utils/getCmsMedia';
 import LinkArea from './LinkArea';
@@ -9,27 +8,49 @@ const QuoteHero = ({ ...data }) => {
   const { quote, citation, image, background, links } = data;
 
   const imageUrl = getCmsMedia(image.data.attributes.url);
-  const backgroundUrl = getCmsMedia(background.data.attributes.url);
+
+  const backgroundImage = background.data
+    ? `url(${getCmsMedia(background.data.attributes.url)}) rgba(0, 0, 0, 0.7)`
+    : 'secondary.main';
 
   return (
-    <Box>
-      {background.data && (
-        <Image
-          alt={background.data.attributes.alternativeText}
-          height={background.data.attributes.height}
-          src={backgroundUrl}
-          width={background.data.attributes.width}
-        />
-      )}
-      <Image
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+        background: backgroundImage,
+        backgroundBlendMode: 'multiply',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        marginBottom: '4em',
+        padding: '2em',
+      }}
+    >
+      <CardMedia
+        component="img"
         alt={image.data.attributes.alternativeText}
-        height={image.data.attributes.height}
-        src={imageUrl}
-        width={image.data.attributes.width}
+        image={imageUrl}
+        sx={{
+          border: 4,
+          borderColor: 'white',
+          borderRadius: '50%',
+          width: 300,
+          height: 300,
+        }}
       />
-      <Typography>{quote}</Typography>
-      <Typography>{citation}</Typography>
-      <LinkArea {...links} />
+      <Box
+        sx={{
+          color: 'white',
+          padding: '4em',
+        }}
+      >
+        <Typography variant="h4" fontWeight="bold">
+          {quote}
+        </Typography>
+        <Typography variant="h6">{citation}</Typography>
+        <LinkArea {...links} />
+      </Box>
     </Box>
   );
 };

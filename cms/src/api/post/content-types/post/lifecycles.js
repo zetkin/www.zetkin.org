@@ -13,6 +13,7 @@ const getPost = (postId) => {
 
 module.exports = {
   async beforeCreate(newPost) {
+    console.log('new post', newPost);
     if (newPost.params.data.slug) {
       newPost.params.data.slug = slugify(newPost.params.data.slug, {
         lower: true,
@@ -31,15 +32,7 @@ module.exports = {
         updatedPost.params.data.slug = slugify(updatedPost.params.data.title, {
           lower: true,
         });
-      } else {
-        updatedPost.params.data.slug = slugify(updatedPost.params.data.slug, {
-          lower: true,
-        });
       }
-    } else {
-      updatedPost.params.data.slug = slugify(updatedPost.params.data.slug, {
-        lower: true,
-      });
     }
   },
 };

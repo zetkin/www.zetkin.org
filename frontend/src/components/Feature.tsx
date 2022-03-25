@@ -4,17 +4,35 @@ import getCmsMedia from '../utils/getCmsMedia';
 import Blurb from './Blurb';
 
 const Feature = ({ ...block }) => {
-  const { image, blurb } = block;
+  const { image, imagePlacement, blurb } = block;
 
   return (
-    <Box>
-      <Image
-        alt={image.data.attributes.alternativeText}
-        height={image.data.attributes.height}
-        src={getCmsMedia(image.data.attributes.url)}
-        width={image.data.attributes.width}
-      />
-      <Blurb {...blurb} />
+    <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: imagePlacement === 'left' ? 'row' : 'row-reverse',
+        minHeight: '30rem',
+        marginBottom: '4em',
+      }}
+    >
+      <Box sx={{ width: '50%', position: 'relative' }}>
+        <Image
+          alt={image.data.attributes.alternativeText}
+          layout="fill"
+          src={getCmsMedia(image.data.attributes.url)}
+        />
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          paddingLeft: '3rem',
+          paddingRight: '3rem',
+        }}
+      >
+        <Blurb {...blurb} />
+      </Box>
     </Box>
   );
 };

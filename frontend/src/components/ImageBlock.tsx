@@ -1,3 +1,4 @@
+import { Box } from '@mui/system';
 import Image from 'next/image';
 import getCmsMedia from '../utils/getCmsMedia';
 
@@ -32,7 +33,7 @@ const ImageBlock = ({ ...rest }) => {
   const imageSize = setImageSize();
 
   return (
-    <figure>
+    <Box component="figure" sx={{ marginBottom: '4rem' }}>
       <Image
         alt={description ? description : image.data.attributes.alternativeText}
         height={imageSize.height}
@@ -40,7 +41,7 @@ const ImageBlock = ({ ...rest }) => {
         width={imageSize.width}
       />
       {description && <figcaption>{description}</figcaption>}
-    </figure>
+    </Box>
   );
 };
 

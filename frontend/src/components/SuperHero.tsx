@@ -1,38 +1,49 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import Image from 'next/image';
-import Carousel from 'react-material-ui-carousel';
 
 import getCmsMedia from '../utils/getCmsMedia';
 import LinkArea from './LinkArea';
-import { CmsImageData } from '../types/cms';
 
 const SuperHero = ({ ...block }) => {
-  const { title, subheader, links, images, background } = block;
+  const { title, subheader, links, image, background } = block;
 
   return (
-    <Box>
-      <Image
-        alt={background.data.attributes.alternativeText}
-        height={background.data.attributes.height}
-        src={getCmsMedia(background.data.attributes.url)}
-        width={background.data.attributes.width}
+    <Box
+      sx={{
+        color: 'white',
+        width: '100%',
+        minHeight: { lg: '100vh' },
+        marginTop: { lg: '-4em' },
+        display: { lg: 'flex' },
+        flexDirection: 'column',
+        alignItems: 'center',
+        background: `url(${getCmsMedia(
+          background.data.attributes.url
+        )}) rgba(0, 0, 0, 0.7)`,
+        backgroundBlendMode: 'multiply',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        marginBottom: '4em',
+      }}
+    >
+      <Typography variant="h1" fontWeight="bold" my={4}>
+        {title}
+      </Typography>
+      <Typography variant="h4" fontWeight="bold" marginBottom={3}>
+        {subheader}
+      </Typography>
+      <Box
+        sx={{
+          height: { lg: '40vw' },
+          width: { lg: '50vw' },
+          position: { lg: 'relative' },
+          borderRadius: '2em',
+          overflow: 'hidden',
+          background: `url(${getCmsMedia(image.data.attributes.url)})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       />
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant="h3">{subheader}</Typography>
-      <Carousel>
-        {images.data.map((image: CmsImageData, index: number) => {
-          return (
-            <Image
-              alt={image.attributes.alternativeText}
-              height={image.attributes.height}
-              key={`carouselImage-${index}`}
-              src={getCmsMedia(image.attributes.url)}
-              width={image.attributes.width}
-            />
-          );
-        })}
-      </Carousel>
       <LinkArea {...links} />
     </Box>
   );

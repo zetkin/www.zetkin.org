@@ -4,8 +4,10 @@ import {
   AccordionSummary,
   Typography,
 } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { CmsAccordionItem } from '../types/cms';
+import TextBlock from './TextBlock';
 
 const FaqAccordion = ({ ...rest }) => {
   const { accordionItems } = rest;
@@ -17,22 +19,34 @@ const FaqAccordion = ({ ...rest }) => {
     };
   };
 
-  return accordionItems.map((item: CmsAccordionItem, index: number) => {
-    return (
-      <Accordion
-        expanded={expanded === `item-${index}`}
-        key={`accordionItem-${index}`}
-        onChange={handleChange(`item-${index}`)}
-      >
-        <AccordionSummary>
-          <Typography>{item.title}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{item.content}</Typography>
-        </AccordionDetails>
-      </Accordion>
-    );
-  });
+  return (
+    <Box
+      sx={{
+        marginBottom: '4rem',
+        width: { lg: '60%' },
+        color: 'palette.text.secondary',
+      }}
+    >
+      {accordionItems.map((item: CmsAccordionItem, index: number) => {
+        return (
+          <Accordion
+            expanded={expanded === `item-${index}`}
+            key={`accordionItem-${index}`}
+            onChange={handleChange(`item-${index}`)}
+          >
+            <AccordionSummary>
+              <Typography variant="h5" fontWeight="bold">
+                {item.title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <TextBlock {...item} />
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
+    </Box>
+  );
 };
 
 export default FaqAccordion;

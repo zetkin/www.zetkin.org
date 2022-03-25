@@ -39,17 +39,19 @@ const PageComponent: NextPage<PageProps> = ({ page }) => {
       </Head>
 
       <main>
-        <Box
-          sx={{
-            color: 'primary.main',
-          }}
-        >
+        <Box>
           <PageHeader
             title={page.attributes.title}
             image={page.attributes.image}
           />
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: { lg: 'flex' },
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           {page.attributes.blocks.map((block, index) => (
             <BlockComponent key={`block-${index}`} {...block} />
           ))}

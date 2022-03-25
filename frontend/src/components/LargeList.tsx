@@ -17,17 +17,47 @@ const LargeList = ({ ...rest }) => {
   const { title, listItems } = rest;
 
   return (
-    <List>
-      {title && <Typography variant="h4">{title}</Typography>}
+    <List
+      sx={{
+        width: { lg: '60%' },
+        marginBottom: '4rem',
+      }}
+    >
+      {title && (
+        <Typography variant="h4" fontWeight="bold">
+          {title}
+        </Typography>
+      )}
       {listItems.map((item: CmsListItem, index: number) => {
         return (
-          <ListItem key={`listItem-${index}`}>
-            <ListItemAvatar>
-              <Avatar>{index + 1}</Avatar>
+          <ListItem
+            key={`listItem-${index}`}
+            sx={{
+              display: { lg: 'flex' },
+              flexDirection: { lg: 'row' },
+              alignItems: { lg: 'flex-start' },
+            }}
+          >
+            <ListItemAvatar
+              sx={{
+                paddingTop: { lg: '0.3em' },
+              }}
+            >
+              <Avatar
+                sx={{
+                  backgroundColor: 'primary.main',
+                }}
+              >
+                {index + 1}
+              </Avatar>
             </ListItemAvatar>
             <ListItemText
               disableTypography={true}
-              primary={<Typography variant="h5">{item.title}</Typography>}
+              primary={
+                <Typography variant="h5" fontWeight="bold">
+                  {item.title}
+                </Typography>
+              }
               secondary={
                 <>
                   {item.content && <Typography>{item.content}</Typography>}
